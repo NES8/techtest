@@ -25,16 +25,12 @@ extension MarvelApiDTO.Comics {
         let textObjects: [TextObject]
         let resourceURI: String
         let urls: [URLElement]
-        let series: MarvelApiDTO.SeriesElement
-        let variants, collections, collectedIssues: [MarvelApiDTO.SeriesElement]
+        let variants, collections, collectedIssues: [MarvelApiDTO.Element]
         let dates: [DateElement]
         let prices: [Price]
         let thumbnail: MarvelApiDTO.Thumbnail
         let images: [MarvelApiDTO.Thumbnail]
-        let creators: MarvelApiDTO.CreatorsElement
-        let characters: MarvelApiDTO.CharactersElement
-        let stories: MarvelApiDTO.StoriesElement
-        let events: MarvelApiDTO.EventsElement
+        let series, creators, characters, stories, events: MarvelApiDTO.Element
 
         enum CodingKeys: String, CodingKey {
             case id

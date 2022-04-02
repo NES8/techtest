@@ -146,15 +146,7 @@
 				254C232827F8A6B4005F900F /* ListPresenter.swift */,
 				254C232627F8A50D005F900F /* GetCharactersUseCase.swift */,
 				254C231A27F86D09005F900F /* MarvelEntities.swift */,
-				254C231C27F88837005F900F /* ApiClient.swift */,
-				254C231E27F88AEA005F900F /* MarvelApiClient.swift */,
-				254C232227F89B63005F900F /* MarvelApiDTO.swift */,
-				254C232427F8A259005F900F /* MarvelApiDTO+Character.swift */,
-				254C232A27F8A9F4005F900F /* MarvelApiDTO+Comics.swift */,
-				254C249227F8E0B1005F900F /* MarvelApiDTO+Creators.swift */,
-				254C249427F8E583005F900F /* MarvelApiDTO+Events.swift */,
-				254C249627F8E6FC005F900F /* MarvelApiDTO+Series.swift */,
-				254C249827F8E7C4005F900F /* MarvelApiDTO+Stories.swift */,
+				254C249B27F8EBC2005F900F /* API Client */,
 				254C218827F85752005F900F /* Main.storyboard */,
 				254C218B27F85753005F900F /* Assets.xcassets */,
 				254C218D27F85753005F900F /* LaunchScreen.storyboard */,
@@ -178,6 +170,30 @@
 				254C21A527F85753005F900F /* TechTestUITestsLaunchTests.swift */,
 			);
 			path = TechTestUITests;
+			sourceTree = "<group>";
+		};
+		254C249A27F8EBB5005F900F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				254C232227F89B63005F900F /* MarvelApiDTO.swift */,
+				254C232427F8A259005F900F /* MarvelApiDTO+Character.swift */,
+				254C232A27F8A9F4005F900F /* MarvelApiDTO+Comics.swift */,
+				254C249227F8E0B1005F900F /* MarvelApiDTO+Creators.swift */,
+				254C249427F8E583005F900F /* MarvelApiDTO+Events.swift */,
+				254C249627F8E6FC005F900F /* MarvelApiDTO+Series.swift */,
+				254C249827F8E7C4005F900F /* MarvelApiDTO+Stories.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		254C249B27F8EBC2005F900F /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				254C231C27F88837005F900F /* ApiClient.swift */,
+				254C231E27F88AEA005F900F /* MarvelApiClient.swift */,
+				254C249A27F8EBB5005F900F /* DTO */,
+			);
+			path = "API Client";
 			sourceTree = "<group>";
 		};
 		A877A976F0EFD2D5489F325C /* Pods */ = {

@@ -1,6 +1,6 @@
 import Foundation
 
-extension MarvelApiDTO.StoriesElement {
+extension MarvelApiDTO.Stories {
 
     // MARK: - Dto
     struct Dto: Decodable {
@@ -21,26 +21,13 @@ extension MarvelApiDTO.StoriesElement {
         let id, title, resultDescription, resourceURI: String
         let type, modified: String
         let thumbnail: MarvelApiDTO.Thumbnail
-        let comics, series, events: Comics
-        let characters: MarvelApiDTO.CharactersElement
-        let creators: MarvelApiDTO.CreatorsElement
-        let originalissue: Originalissue
+        let comics, series, events, characters, creators: MarvelApiDTO.Element
+        let originalissue: MarvelApiDTO.Item
 
         enum CodingKeys: String, CodingKey {
             case id, title
             case resultDescription = "description"
             case resourceURI, type, modified, thumbnail, comics, series, events, characters, creators, originalissue
         }
-    }
-
-    // MARK: - Comics
-    struct Comics: Codable {
-        let available, returned, collectionURI: String
-        let items: [Originalissue]
-    }
-
-    // MARK: - Originalissue
-    struct Originalissue: Codable {
-        let resourceURI, name: String
     }
 }

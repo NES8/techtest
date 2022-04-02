@@ -10,6 +10,7 @@ class MarvelAPIClient: APIClient {
     }
 
     private let baseUrl: String
+//    private var bag: Set<AnyCancellable> = []
 
     init(baseUrl: String) {
         self.baseUrl = baseUrl
@@ -38,6 +39,16 @@ class MarvelAPIClient: APIClient {
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }
+
+//    func getCharacters(onCompletion: @escaping (Result<[Marvel.Character], Error>) -> Void) {
+//        return getCharacters().sink { (done) in
+//            if case let .failure(error) = done {
+//                onCompletion(.failure(error))
+//            }
+//        } receiveValue: { (value) in
+//            onCompletion(.success(value))
+//        }.store(in: &bag)
+//    }
 
     // MARK: - Perform request
 

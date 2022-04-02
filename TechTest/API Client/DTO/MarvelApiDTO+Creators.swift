@@ -22,9 +22,6 @@ extension MarvelApiDTO.Creators {
         let suffix, fullName, resourceURI: String
         let urls: [MarvelApiDTO.URLElement]
         let thumbnail: MarvelApiDTO.Thumbnail
-        let series: MarvelApiDTO.SeriesElement
-        let stories: MarvelApiDTO.StoriesElement
-        let comics: MarvelApiDTO.ComicsElement
-        let events: MarvelApiDTO.EventsElement
+        let series, stories, comics, events: MarvelApiDTO.Element
     }
 }

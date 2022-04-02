@@ -22,12 +22,8 @@ extension MarvelApiDTO.Events {
         let urls: [MarvelApiDTO.URLElement]
         let modified, start, end: String
         let thumbnail: MarvelApiDTO.Thumbnail
-        let comics: MarvelApiDTO.ComicsElement
-        let stories: MarvelApiDTO.StoriesElement
-        let series: MarvelApiDTO.SeriesElement
-        let characters: MarvelApiDTO.CharactersElement
-        let creators: MarvelApiDTO.CreatorsElement
-        let next, previous: MarvelApiDTO.Next
+        let comics, stories, series, characters, creators: MarvelApiDTO.Element
+        let next, previous: MarvelApiDTO.Item
 
         enum CodingKeys: String, CodingKey {
             case id, title

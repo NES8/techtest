@@ -23,9 +23,7 @@ extension MarvelApiDTO.Character {
         let resourceURI: String
         let urls: [MarvelApiDTO.URLElement]
         let thumbnail: MarvelApiDTO.Thumbnail
-        let comics: MarvelApiDTO.ComicsElement
-        let stories: MarvelApiDTO.StoriesElement
-        let events, series: MarvelApiDTO.ComicsElement
+        let comics, stories, events, series: MarvelApiDTO.Element
 
         enum CodingKeys: String, CodingKey {
             case id, name
