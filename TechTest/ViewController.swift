@@ -1,19 +1,22 @@
-//
-//  ViewController.swift
-//  TechTest
-//
-//  Created by Xavier Serra Soteras on 2/4/22.
-//
-
 import UIKit
+
+protocol ListUI: AnyObject {
+    func showError()
+}
 
 class ViewController: UIViewController {
 
+    var presenter: ListPresenter = ListPresenter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        presenter.didViewLoad()
     }
-
-
 }
 
+extension ViewController: ListUI {
+    func showError() {
+        fatalError()
+    }
+}
