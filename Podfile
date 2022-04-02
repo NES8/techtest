@@ -6,6 +6,7 @@ target 'TechTest' do
   # Pods for TechTest
 
   pod 'Alamofire', '~> 5.5.0'
+  pod 'SDWebImage', '~> 5.0'
 
   target 'TechTestTests' do
     inherit! :search_paths
