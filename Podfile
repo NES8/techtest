@@ -2,6 +2,7 @@ platform :ios, '14.1'
 
 target 'TechTest' do
   use_frameworks!
+  inhibit_all_warnings!
 
   # Pods for TechTest
 

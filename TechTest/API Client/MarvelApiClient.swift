@@ -17,11 +17,11 @@ class MarvelAPIClient: APIClient {
 
     // MARK: - Characters
 
-    func getCharacters() -> AnyPublisher<[Marvel.Character], Error> {
+    func getCharacters() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         getCharacters(nameStartsWith: nil)
     }
 
-    func getCharacters(nameStartsWith: String?) -> AnyPublisher<[Marvel.Character], Error> {
+    func getCharacters(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         var authParams: [String: Any] = [
             "limit": Constants.limit
         ]
@@ -34,7 +34,7 @@ class MarvelAPIClient: APIClient {
         return performRequest(at: url, parameters: authParams, decodeWith: MarvelApiDTO.Character.Dto.self)
             .map(\.data)
             .map(\.results)
-            .map{ $0.map(\.domainCharacter) }
+            .map{ $0.map(\.domainEntity) }
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }

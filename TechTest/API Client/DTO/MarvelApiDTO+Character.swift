@@ -34,16 +34,19 @@ extension MarvelApiDTO.Character {
 }
 
 extension MarvelApiDTO.Character.Result {
-    var domainCharacter: Marvel.Character {
+    var domainEntity: Marvel.MarvelEntity {
         let wikiUrl = urls.first(where: { $0.type == .wiki })?.url
         let detailUrl = urls.first(where: { $0.type == .detail })?.url
         let thumbnailUrl = URL(string: thumbnail.path + "/portrait_fantastic." + thumbnail.thumbnailExtension)
 
-        return Marvel.Character(id: id,
-                                name: name,
-                                description: resultDescription,
-                                thumbnailURL: thumbnailUrl,
-                                wikiURL: wikiUrl,
-                                detailURL: detailUrl)
+        return Marvel.MarvelEntity(
+            id: id,
+            name: name,
+            description: resultDescription,
+            source: .character,
+            thumbnailURL: thumbnailUrl,
+            wikiURL: wikiUrl,
+            detailURL: detailUrl
+        )
     }
 }

@@ -1,12 +1,22 @@
 import Foundation
 
 enum Marvel {
-    struct Character: Equatable {
-        public var id: Int
-        public var name: String
-        public var description: String
-        public var thumbnailURL: URL?
-        public var wikiURL: URL?
-        public var detailURL: URL?
+    enum Source {
+        case character
+        case comics
+        case creators
+        case events
+        case series
+        case stories
+    }
+
+    struct MarvelEntity: Equatable {
+        let id: Int
+        let name: String
+        let description: String
+        let source: Source
+        let thumbnailURL: URL?
+        let wikiURL: URL?
+        let detailURL: URL?
     }
 }
