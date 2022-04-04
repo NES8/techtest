@@ -2,20 +2,6 @@ import Foundation
 
 extension MarvelApiDTO.Character {
 
-    // MARK: - Dto
-    struct Dto: Decodable {
-        let code: Int
-        let status, copyright, attributionText, attributionHTML: String
-        let data: DataClass
-        let etag: String
-    }
-
-    // MARK: - DataClass
-    struct DataClass: Decodable {
-        let offset, limit, total, count: Int
-        let results: [Result]
-    }
-
     // MARK: - Result
     struct Result: Decodable {
         let id: Int
@@ -33,7 +19,7 @@ extension MarvelApiDTO.Character {
     }
 }
 
-extension MarvelApiDTO.Character.Result {
+extension MarvelApiDTO.Character.Result: MarvelApiDomainEntity {
     var domainEntity: Marvel.MarvelEntity {
         let wikiUrl = urls.first(where: { $0.type == .wiki })?.url
         let detailUrl = urls.first(where: { $0.type == .detail })?.url

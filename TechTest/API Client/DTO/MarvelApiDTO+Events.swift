@@ -2,23 +2,10 @@ import Foundation
 
 extension MarvelApiDTO.Events {
 
-    // MARK: - Dto
-    struct Dto: Decodable {
-        let code: Int
-        let status, copyright, attributionText, attributionHTML: String
-        let data: DataClass
-        let etag: String
-    }
-
-    // MARK: - DataClass
-    struct DataClass: Decodable {
-        let offset, limit, total, count: Int
-        let results: [Result]
-    }
-
     // MARK: - Result
     struct Result: Decodable {
-        let id, title, resultDescription, resourceURI: String
+        let id: Int
+        let title, resultDescription, resourceURI: String
         let urls: [MarvelApiDTO.URLElement]
         let modified, start, end: String
         let thumbnail: MarvelApiDTO.Thumbnail
@@ -30,5 +17,23 @@ extension MarvelApiDTO.Events {
             case resultDescription = "description"
             case resourceURI, urls, modified, start, end, thumbnail, comics, stories, series, characters, creators, next, previous
         }
+    }
+}
+
+extension MarvelApiDTO.Events.Result: MarvelApiDomainEntity {
+    var domainEntity: Marvel.MarvelEntity {
+        let wikiUrl = urls.first(where: { $0.type == .wiki })?.url
+        let detailUrl = urls.first(where: { $0.type == .detail })?.url
+        let thumbnailUrl = URL(string: thumbnail.path + "/portrait_fantastic." + thumbnail.thumbnailExtension)
+
+        return Marvel.MarvelEntity(
+            id: id,
+            name: title,
+            description: resultDescription,
+            source: .events,
+            thumbnailURL: thumbnailUrl,
+            wikiURL: wikiUrl,
+            detailURL: detailUrl
+        )
     }
 }

@@ -5,33 +5,113 @@ import CryptoKit
 
 class MarvelAPIClient: APIClient {
 
-    struct Constants {
-        static let limit = 33
-    }
-
     private let baseUrl: String
 
     init(baseUrl: String) {
         self.baseUrl = baseUrl
     }
 
-    // MARK: - Characters
+    // MARK: - Constants
+
+    private struct Constants {
+        static let limit = 33
+    }
+
+    private enum Endpoint: String {
+        case characters
+        case comics
+        case creators
+        case events
+        case series
+        case stories
+
+        var path: String {
+            "/v1/public/" + self.rawValue
+        }
+
+        var startsWithKeyParameter: String {
+            switch self {
+            case .characters,
+                    .creators,
+                    .events:
+                return "nameStartsWith"
+            case .comics,
+                    .series:
+                return "titleStartsWith"
+            case .stories:
+                preconditionFailure("Stories can't use name or title filter")
+            }
+        }
+    }
+
+    // MARK: - Get
 
     func getCharacters() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         getCharacters(nameStartsWith: nil)
     }
 
     func getCharacters(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .characters, responseType: MarvelApiDTO.Character.Result.self, filterStartsWith: nameStartsWith)
+    }
+
+    func getComics() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getComics(nameStartsWith: nil)
+    }
+
+    func getComics(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .comics, responseType: MarvelApiDTO.Comics.Result.self, filterStartsWith: nameStartsWith)
+    }
+
+    func getCreators() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getCreators(nameStartsWith: nil)
+    }
+
+    func getCreators(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .creators, responseType: MarvelApiDTO.Creators.Result.self, filterStartsWith: nameStartsWith)
+    }
+
+    func getEvents() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getEvents(nameStartsWith: nil)
+    }
+
+    func getEvents(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .events, responseType: MarvelApiDTO.Events.Result.self, filterStartsWith: nameStartsWith)
+    }
+
+    func getSeries() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getSeries(nameStartsWith: nil)
+    }
+
+    func getSeries(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .series, responseType: MarvelApiDTO.Series.Result.self, filterStartsWith: nameStartsWith)
+    }
+
+    func getStories() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getStories(nameStartsWith: nil)
+    }
+
+    func getStories(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .stories, responseType: MarvelApiDTO.Stories.Result.self, filterStartsWith: nameStartsWith)
+    }
+
+    // MARK: Get private
+
+    private func getMarvelEntity<T: Decodable & MarvelApiDomainEntity>(
+        endpoint: Endpoint,
+        responseType: T.Type,
+        filterStartsWith: String?
+    ) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+
         var authParams: [String: Any] = [
             "limit": Constants.limit
         ]
-        if let starts = nameStartsWith {
-            authParams["nameStartsWith"] = starts
+        if let filter = filterStartsWith {
+            authParams[endpoint.startsWithKeyParameter] = filter
         }
-        let path = "/v1/public/characters"
-        let url = baseUrl + path
-        
-        return performRequest(at: url, parameters: authParams, decodeWith: MarvelApiDTO.Character.Dto.self)
+
+        let url = baseUrl + endpoint.path
+
+        return performRequest(at: url, parameters: authParams, decodeWith: MarvelApiDTO.Dto<T>.self)
             .map(\.data)
             .map(\.results)
             .map{ $0.map(\.domainEntity) }

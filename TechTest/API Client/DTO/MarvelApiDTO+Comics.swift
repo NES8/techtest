@@ -2,29 +2,17 @@ import Foundation
 
 extension MarvelApiDTO.Comics {
 
-    // MARK: - Dto
-    struct Dto: Decodable {
-        let code: Int
-        let status, copyright, attributionText, attributionHTML: String
-        let data: DataClass
-        let etag: String
-    }
-
-    // MARK: - DataClass
-    struct DataClass: Decodable {
-        let offset, limit, total, count: Int
-        let results: [Result]
-    }
-
     // MARK: - Result
     struct Result: Decodable {
-        let id, digitalID, title, issueNumber: String
+        let id, digitalID: Int
+        let title: String
+        let issueNumber: Double
         let variantDescription, resultDescription, modified, isbn: String
-        let upc, diamondCode, ean, issn: String
-        let format, pageCount: String
+        let upc, diamondCode, ean, issn, format: String
+        let pageCount: Int
         let textObjects: [TextObject]
         let resourceURI: String
-        let urls: [URLElement]
+        let urls: [MarvelApiDTO.URLElement]
         let variants, collections, collectedIssues: [MarvelApiDTO.Element]
         let dates: [DateElement]
         let prices: [Price]
@@ -48,17 +36,30 @@ extension MarvelApiDTO.Comics {
 
     // MARK: - Price
     struct Price: Decodable {
-        let type, price: String
+        let type: String
+        let price: Double
     }
 
     // MARK: - TextObject
     struct TextObject: Decodable {
         let type, language, text: String
     }
+}
 
-    // MARK: - URLElement
-    struct URLElement: Decodable {
-        let type, url: String
+extension MarvelApiDTO.Comics.Result: MarvelApiDomainEntity {
+    var domainEntity: Marvel.MarvelEntity {
+        let wikiUrl = urls.first(where: { $0.type == .wiki })?.url
+        let detailUrl = urls.first(where: { $0.type == .detail })?.url
+        let thumbnailUrl = URL(string: thumbnail.path + "/portrait_fantastic." + thumbnail.thumbnailExtension)
+
+        return Marvel.MarvelEntity(
+            id: id,
+            name: title,
+            description: resultDescription,
+            source: .comics,
+            thumbnailURL: thumbnailUrl,
+            wikiURL: wikiUrl,
+            detailURL: detailUrl
+        )
     }
-
 }

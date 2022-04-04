@@ -2,26 +2,32 @@ import Foundation
 
 extension MarvelApiDTO.Creators {
 
-    // MARK: - Dto
-    struct Dto: Decodable {
-        let code: Int
-        let status, copyright, attributionText, attributionHTML: String
-        let data: DataClass
-        let etag: String
-    }
-
-    // MARK: - DataClass
-    struct DataClass: Decodable {
-        let offset, limit, total, count: Int
-        let results: [Result]
-    }
-
     // MARK: - Result
     struct Result: Decodable {
-        let id, firstName, middleName, lastName: String
+        let id: Int
+        let firstName, middleName, lastName: String
         let suffix, fullName, resourceURI: String
         let urls: [MarvelApiDTO.URLElement]
         let thumbnail: MarvelApiDTO.Thumbnail
         let series, stories, comics, events: MarvelApiDTO.Element
+    }
+}
+
+extension MarvelApiDTO.Creators.Result: MarvelApiDomainEntity {
+    var domainEntity: Marvel.MarvelEntity {
+        let wikiUrl = urls.first(where: { $0.type == .wiki })?.url
+        let detailUrl = urls.first(where: { $0.type == .detail })?.url
+        let thumbnailUrl = URL(string: thumbnail.path + "/portrait_fantastic." + thumbnail.thumbnailExtension)
+        let title = [firstName, middleName, lastName].joined(separator: " ")
+
+        return Marvel.MarvelEntity(
+            id: id,
+            name: title,
+            description: "",
+            source: .creators,
+            thumbnailURL: thumbnailUrl,
+            wikiURL: wikiUrl,
+            detailURL: detailUrl
+        )
     }
 }

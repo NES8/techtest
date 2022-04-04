@@ -1,7 +1,6 @@
 import Foundation
 
 // Using enum to group
-
 enum MarvelApiDTO {
     enum Character {}
     enum Comics {}
@@ -15,6 +14,20 @@ enum MarvelApiDTO {
 // parsing JSON from https://developer.marvel.com/docs#!/public/getStoryCollection_get_32
 
 extension MarvelApiDTO {
+
+    // MARK: - Dto
+    struct Dto<T: Decodable>: Decodable {
+        let code: Int
+        let status, copyright, attributionText, attributionHTML: String
+        let data: DataClass<T>
+        let etag: String
+    }
+
+    // MARK: - DataClass
+    struct DataClass<T: Decodable>: Decodable {
+        let offset, limit, total, count: Int
+        let results: [T]
+    }
 
     // MARK: - Element
     struct Element: Decodable {
