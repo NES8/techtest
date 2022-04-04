@@ -7,7 +7,7 @@ protocol GetMarvelEntityUseCase {
 }
 
 class GetMarvelEntity: GetMarvelEntityUseCase {
-    let apiClient = MarvelAPIClient(baseUrl: "https://gateway.marvel.com")
+    @Inject private var apiClient: APIClient
 
     func callAsFunction(type: Marvel.Source) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         apiClient
