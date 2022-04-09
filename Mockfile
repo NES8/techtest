@@ -1,14 +1,15 @@
 sourceryCommand: null
 sourceryTemplate: null
-TechTestTests:
+
+CoreTests:
   sources:
     include:
-    - ./TechTest
-  output: ./TechTestTests/Generated/Mock.generated.swift
+    - ./Core
+  output: ./Core/CoreTests/Generated/Mock.generated.swift
   targets:
-  - TechTestTests
+  - CoreTests
   testable:
-  - TechTest
+  - Core
   import:
   - Combine
   - Foundation

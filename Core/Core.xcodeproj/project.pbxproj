@@ -14,6 +14,7 @@
 		250DDA9D28019A1000611B48 /* AppTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDA9428019A0F00611B48 /* AppTasks.swift */; };
 		250DDA9E28019A1000611B48 /* Dispatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDA9728019A0F00611B48 /* Dispatching.swift */; };
 		250DDA9F28019A1000611B48 /* CoreServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDA9328019A0F00611B48 /* CoreServiceLocator.swift */; };
+		250DDACE2801E61E00611B48 /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDAC72801E29900611B48 /* Mock.generated.swift */; };
 		25D0DDED2801954A00AC7D67 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0DDE42801954900AC7D67 /* Core.framework */; };
 		25D0DDF22801954A00AC7D67 /* GetMarvelEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0DDF12801954A00AC7D67 /* GetMarvelEntityTests.swift */; };
 		25D0DDF32801954A00AC7D67 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 25D0DDE72801954900AC7D67 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,6 +53,7 @@
 		250DDA9628019A0F00611B48 /* AdditionsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionsServices.swift; sourceTree = "<group>"; };
 		250DDA9728019A0F00611B48 /* Dispatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatching.swift; sourceTree = "<group>"; };
 		250DDA9828019A0F00611B48 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		250DDAC72801E29900611B48 /* Mock.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
 		25D0DDE42801954900AC7D67 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D0DDE72801954900AC7D67 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		25D0DDEC2801954A00AC7D67 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,14 @@
 			path = "Additions Pod (no my code)";
 			sourceTree = "<group>";
 		};
+		250DDAC82801E29900611B48 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				250DDAC72801E29900611B48 /* Mock.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		25D0DDDA2801954900AC7D67 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		25D0DDF02801954A00AC7D67 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				250DDAC82801E29900611B48 /* Generated */,
 				25D0DDF12801954A00AC7D67 /* GetMarvelEntityTests.swift */,
 			);
 			path = CoreTests;
@@ -406,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250DDACE2801E61E00611B48 /* Mock.generated.swift in Sources */,
 				25D0DDF22801954A00AC7D67 /* GetMarvelEntityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

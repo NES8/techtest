@@ -1,6 +1,6 @@
 import Foundation
 
-public  enum Marvel {
+public enum Marvel {
     public  enum Source {
         case character
         case comics
@@ -18,5 +18,23 @@ public  enum Marvel {
         let thumbnailURL: URL?
         let wikiURL: URL?
         let detailURL: URL?
+
+        public init(
+            id: Int,
+            name: String,
+            description: String,
+            source: Source,
+            thumbnailURL: URL?,
+            wikiURL: URL?,
+            detailURL: URL?
+        ) {
+            self.id = id
+            self.name = name
+            self.description = description
+            self.source = source
+            self.thumbnailURL = thumbnailURL
+            self.wikiURL = wikiURL
+            self.detailURL = detailURL
+        }
     }
 }

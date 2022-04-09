@@ -2,6 +2,7 @@ import XCTest
 import Combine
 import SwiftyMocky
 import Core
+import TestFoundation
 
 @testable import TechTest
 
