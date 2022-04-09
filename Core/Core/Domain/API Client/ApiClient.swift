@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 // sourcery: AutoMockable
-protocol APIClient {
+public protocol APIClient {
     func getCharacters() -> AnyPublisher<[Marvel.MarvelEntity], Error>
     func getCharacters(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error>
     func getComics() -> AnyPublisher<[Marvel.MarvelEntity], Error>
@@ -17,6 +17,6 @@ protocol APIClient {
     func getStories(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error>
 }
 
-protocol MarvelApiDomainEntity {
+public protocol MarvelApiDomainEntity {
     var domainEntity: Marvel.MarvelEntity { get }
 }

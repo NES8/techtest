@@ -10,7 +10,7 @@ import SwiftyMocky
 import XCTest
 import Combine
 import Foundation
-@testable import TechTest
+@testable import Core
 
 
 // MARK: - APIClient

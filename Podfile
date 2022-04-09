@@ -1,14 +1,15 @@
 platform :ios, '14.1'
+use_frameworks!
+inhibit_all_warnings!
+
+workspace 'TechTest.xcworkspace'
 
 target 'TechTest' do
-  use_frameworks!
-  inhibit_all_warnings!
 
   # Pods for TechTest
 
+  #pod 'SDWebImage', '~> 5.0.0'
   pod 'Alamofire', '~> 5.5.0'
-  pod 'SDWebImage', '~> 5.0.0'
-  pod 'SwiftyMocky', '~> 4.1.0'
 
   target 'TechTestTests' do
     inherit! :search_paths
@@ -17,6 +18,18 @@ target 'TechTest' do
 
   target 'TechTestUITests' do
     # Pods for testing
+  end
+
+end
+
+target 'Core' do
+  project 'Core/Core'
+
+  pod 'Alamofire', '~> 5.5.0'
+
+  target 'CoreTests' do
+    inherit! :complete
+    pod 'SwiftyMocky', '~> 4.1.0'
   end
 
 end
