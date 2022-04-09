@@ -2,14 +2,16 @@ import Foundation
 import Combine
 
 // sourcery: AutoMockable
-protocol GetMarvelEntityUseCase {
+public protocol GetMarvelEntityUseCase {
     func callAsFunction(type: Marvel.Source) -> AnyPublisher<[Marvel.MarvelEntity], Error>
 }
 
-class GetMarvelEntity: GetMarvelEntityUseCase {
+public class GetMarvelEntity: GetMarvelEntityUseCase {
     @Inject private var apiClient: APIClient
 
-    func callAsFunction(type: Marvel.Source) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+    public init() {}
+
+    public func callAsFunction(type: Marvel.Source) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         apiClient
             .getCharacters()
     }

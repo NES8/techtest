@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import Core
 
 class ListPresenter {
     private weak var ui: ListUI?

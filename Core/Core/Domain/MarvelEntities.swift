@@ -1,7 +1,7 @@
 import Foundation
 
-enum Marvel {
-    enum Source {
+public  enum Marvel {
+    public  enum Source {
         case character
         case comics
         case creators
@@ -10,7 +10,7 @@ enum Marvel {
         case stories
     }
 
-    struct MarvelEntity: Equatable {
+    public struct MarvelEntity: Equatable {
         let id: Int
         let name: String
         let description: String
