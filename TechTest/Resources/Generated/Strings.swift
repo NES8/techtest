@@ -12,6 +12,16 @@ import Foundation
 internal enum L10n {
   /// Loading
   internal static let loading = L10n.tr("Localizable", "Loading")
+  /// Please, check your internet connection and try again
+  internal static let messageViewErrorConnectionDescription = L10n.tr("Localizable", "MessageView ErrorConnection Description")
+  /// Connection error
+  internal static let messageViewErrorConnectionTitle = L10n.tr("Localizable", "MessageView ErrorConnection Title")
+  /// Please take a while and try again
+  internal static let messageViewErrorUnknowDescription = L10n.tr("Localizable", "MessageView ErrorUnknow Description")
+  /// Unknow error
+  internal static let messageViewErrorUnknowTitle = L10n.tr("Localizable", "MessageView ErrorUnknow Title")
+  /// Retry
+  internal static let retry = L10n.tr("Localizable", "Retry")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

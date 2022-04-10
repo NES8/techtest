@@ -1,1 +1,6 @@
 "Loading" = "Cargando";
+"MessageView ErrorUnknow Title" = "Error desconocido";
+"MessageView ErrorUnknow Description" = "Por favor, espere un rato y vuelva a intentarlo";
+"MessageView ErrorConnection Title" = "Error de conexión";
+"MessageView ErrorConnection Description" = "Verifique su conexión a internet y vuelva a intentarlo";
+"Retry" = "Reintentar";
