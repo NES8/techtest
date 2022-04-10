@@ -29,7 +29,8 @@ class MarvelListPresenter: BasePresenter {
                 }
                 print("❌")
             }, receiveValue: { [weak self] characters in
-                print(characters)
+                let viewModels = characters.map { MarvelListCollectionModel(entity: $0) }
+                self?.ui?.show(items: viewModels)
             }).store(in: &cancelables)
     }
 }

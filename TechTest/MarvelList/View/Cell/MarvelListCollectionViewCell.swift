@@ -8,9 +8,6 @@ class MarvelListCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-//        titleLabel.styleHeadline2()
-//        bodyLabel.styleTitle2()
     }
 
     func setup(_ viewModel: MarvelListCollectionModel) {
