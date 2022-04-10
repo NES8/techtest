@@ -1,0 +1,7 @@
+"Loading" = "Loading";
+"MessageView ErrorUnknow Title" = "Unknow error";
+"MessageView ErrorUnknow Description" = "Please take a while and try again";
+"MessageView ErrorConnection Title" = "Connection error";
+"MessageView ErrorConnection Description" = "Please, check your internet connection and try again";
+"Retry" = "Retry";
+

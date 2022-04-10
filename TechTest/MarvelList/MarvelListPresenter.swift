@@ -2,12 +2,24 @@ import Foundation
 import Combine
 import Core
 
-class ListPresenter {
-    private weak var ui: ListUI?
+class MarvelListPresenter: BasePresenter {
+    private weak var ui: MarvelListUI?
     private var cancelables = Set<AnyCancellable>()
     private let getCharacters = GetMarvelEntity()
 
-    func didViewLoad() {
+    init(
+        ui: MarvelListUI
+    ) {
+        self.ui = ui
+    }
+
+    func viewDidLoad() {
+        loadData()
+    }
+
+    private func loadData() {
+        ui?.showInitialLoading()
+        
         getCharacters(type: .character)
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { [weak self] completion in

@@ -6,14 +6,13 @@ workspace 'TechTest.xcworkspace'
 
 target 'TechTest' do
 
-  # Pods for TechTest
-
-  #pod 'SDWebImage', '~> 5.0.0'
   pod 'Alamofire', '~> 5.5.0'
+  pod 'SDWebImage', '~> 5.0.0'
+  pod 'SwiftGen', '~> 6.0'
 
   target 'TechTestTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'SwiftyMocky', '~> 4.1.0'
   end
 
   target 'TechTestUITests' do

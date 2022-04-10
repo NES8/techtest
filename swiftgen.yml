@@ -1,0 +1,12 @@
+xcassets:
+  inputs:
+    - TechTest/Resources/Images.xcassets
+  outputs:
+    - templateName: swift4
+      output: TechTest/Resources/Generated/assets-images.swift
+strings:
+  inputs:
+    - TechTest/Resources/en.lproj
+  outputs:
+    templateName: structured-swift5
+    output: TechTest/Resources/Generated/Strings.swift
