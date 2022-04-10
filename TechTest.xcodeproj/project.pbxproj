@@ -39,6 +39,10 @@
 		25FDDF272803010A00DB0C48 /* MessageViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDF242803010A00DB0C48 /* MessageViewProvider.swift */; };
 		25FDDF282803010A00DB0C48 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDF252803010A00DB0C48 /* MessageView.swift */; };
 		25FDDF292803010A00DB0C48 /* MessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25FDDF262803010A00DB0C48 /* MessageView.xib */; };
+		25FDDF2F2803353900DB0C48 /* MarvelListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25FDDF2E2803353900DB0C48 /* MarvelListCell.xib */; };
+		25FDDF312803368600DB0C48 /* MarvelListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDF302803368600DB0C48 /* MarvelListCollectionViewCell.swift */; };
+		25FDDF33280336C500DB0C48 /* UICollectionView+ReusableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDF32280336C500DB0C48 /* UICollectionView+ReusableItem.swift */; };
+		25FDDF352803374A00DB0C48 /* MarvelListCollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDF342803374A00DB0C48 /* MarvelListCollectionModel.swift */; };
 		4BC39883C7E78A5046C8C9FF /* Pods_TechTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A66CDF5826381B44965BAE23 /* Pods_TechTestTests.framework */; };
 		E2BA31A0E0557C6192975A0B /* Pods_TechTest_TechTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6D079E3D5E945CEC89752C /* Pods_TechTest_TechTestUITests.framework */; };
 		E8425730471B4CEFAB5B85E9 /* Pods_TechTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2367A55C6D7A0D7C4166E4 /* Pods_TechTest.framework */; };
@@ -113,6 +117,10 @@
 		25FDDF242803010A00DB0C48 /* MessageViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewProvider.swift; sourceTree = "<group>"; };
 		25FDDF252803010A00DB0C48 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		25FDDF262803010A00DB0C48 /* MessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageView.xib; sourceTree = "<group>"; };
+		25FDDF2E2803353900DB0C48 /* MarvelListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarvelListCell.xib; sourceTree = "<group>"; };
+		25FDDF302803368600DB0C48 /* MarvelListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListCollectionViewCell.swift; sourceTree = "<group>"; };
+		25FDDF32280336C500DB0C48 /* UICollectionView+ReusableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ReusableItem.swift"; sourceTree = "<group>"; };
+		25FDDF342803374A00DB0C48 /* MarvelListCollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListCollectionModel.swift; sourceTree = "<group>"; };
 		4D7E87C9A502FB30136CCF6D /* Pods-TechTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechTest.debug.xcconfig"; path = "Target Support Files/Pods-TechTest/Pods-TechTest.debug.xcconfig"; sourceTree = "<group>"; };
 		6A8E238B5D0A3597BA1702CD /* Pods-TechTest-TechTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechTest-TechTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-TechTest-TechTestUITests/Pods-TechTest-TechTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8379ABE9AFC2532EB0A64EE3 /* Pods-TechTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechTestTests.release.xcconfig"; path = "Target Support Files/Pods-TechTestTests/Pods-TechTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,8 +199,7 @@
 			children = (
 				253842AB27FB84AD005AFD1D /* App Startup */,
 				25FDDF1D2802F8D000DB0C48 /* MarvelList */,
-				25FDDF1B2802F4E800DB0C48 /* UIView+Load.swift */,
-				25FDDF222802FA2000DB0C48 /* UIStoryboard+instantiate.swift */,
+				25FDDF2C280332DC00DB0C48 /* Extensions */,
 				25FDDF2A2803010F00DB0C48 /* MessageView */,
 				25FDDF0A2802E4B600DB0C48 /* LoadingView */,
 				25FDDF052802E2F700DB0C48 /* Bases */,
@@ -263,8 +270,7 @@
 		25FDDF1D2802F8D000DB0C48 /* MarvelList */ = {
 			isa = PBXGroup;
 			children = (
-				254C218627F85752005F900F /* MarvelListViewController.swift */,
-				258B9F0527FB8DAA00E02DF3 /* MarvelList.storyboard */,
+				25FDDF2D2803340E00DB0C48 /* View */,
 				254C232827F8A6B4005F900F /* MarvelListPresenter.swift */,
 				25FDDF1E2802F8EC00DB0C48 /* MarvelListServiceProvider.swift */,
 				25FDDF202802F96700DB0C48 /* MarvelListService.swift */,
@@ -280,6 +286,36 @@
 				25FDDF242803010A00DB0C48 /* MessageViewProvider.swift */,
 			);
 			path = MessageView;
+			sourceTree = "<group>";
+		};
+		25FDDF2C280332DC00DB0C48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				25FDDF32280336C500DB0C48 /* UICollectionView+ReusableItem.swift */,
+				25FDDF1B2802F4E800DB0C48 /* UIView+Load.swift */,
+				25FDDF222802FA2000DB0C48 /* UIStoryboard+instantiate.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		25FDDF2D2803340E00DB0C48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				254C218627F85752005F900F /* MarvelListViewController.swift */,
+				258B9F0527FB8DAA00E02DF3 /* MarvelList.storyboard */,
+				25FDDF362803388E00DB0C48 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		25FDDF362803388E00DB0C48 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				25FDDF2E2803353900DB0C48 /* MarvelListCell.xib */,
+				25FDDF302803368600DB0C48 /* MarvelListCollectionViewCell.swift */,
+				25FDDF342803374A00DB0C48 /* MarvelListCollectionModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		A877A976F0EFD2D5489F325C /* Pods */ = {
@@ -426,6 +462,7 @@
 				25FDDF142802EF9800DB0C48 /* Localizable.strings in Resources */,
 				25FDDF0C2802E87700DB0C48 /* Images.xcassets in Resources */,
 				258B9F0627FB8DAA00E02DF3 /* MarvelList.storyboard in Resources */,
+				25FDDF2F2803353900DB0C48 /* MarvelListCell.xib in Resources */,
 				25FDDF082802E4B200DB0C48 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,14 +627,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25FDDF33280336C500DB0C48 /* UICollectionView+ReusableItem.swift in Sources */,
 				254C232927F8A6B4005F900F /* MarvelListPresenter.swift in Sources */,
 				25FDDD9A2802DF6A00DB0C48 /* BasePresenter.swift in Sources */,
+				25FDDF352803374A00DB0C48 /* MarvelListCollectionModel.swift in Sources */,
 				254C218727F85752005F900F /* MarvelListViewController.swift in Sources */,
 				25FDDF092802E4B200DB0C48 /* LoadingView.swift in Sources */,
 				25FDDF0F2802E8F800DB0C48 /* assets-images.swift in Sources */,
 				254C218327F85752005F900F /* AppDelegate.swift in Sources */,
 				254C218527F85752005F900F /* SceneDelegate.swift in Sources */,
 				253842B327FB86CF005AFD1D /* WindowSetupTask.swift in Sources */,
+				25FDDF312803368600DB0C48 /* MarvelListCollectionViewCell.swift in Sources */,
 				25FDDD982802DE3800DB0C48 /* BaseViewController.swift in Sources */,
 				25FDDF1C2802F4E800DB0C48 /* UIView+Load.swift in Sources */,
 				253842AF27FB8518005AFD1D /* AppUITask.swift in Sources */,
