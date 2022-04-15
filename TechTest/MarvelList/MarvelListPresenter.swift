@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import Core
 
-class MarvelListPresenter: BasePresenter {
+class MarvelListPresenter {
     private weak var ui: MarvelListUI?
     private var cancelables = Set<AnyCancellable>()
     private let getCharacters = GetMarvelEntity()
@@ -18,7 +18,7 @@ class MarvelListPresenter: BasePresenter {
     }
 
     private func loadData() {
-        ui?.showInitialLoading()
+//        ui?.showInitialLoading()
         
         getCharacters(type: .character)
             .receive(on: RunLoop.main)

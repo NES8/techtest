@@ -24,25 +24,10 @@ extension UICollectionView {
         register(nib, forCellWithReuseIdentifier: reusableItem.reuseIdentifier)
     }
 
-    func registerNib(nibName name: String, forCellReuseIdentifier identifier: String) {
-        register(
-            UINib(nibName: name, bundle: Bundle.main),
-            forCellWithReuseIdentifier: identifier
-        )
-    }
-
     func registerNib(nibName name: String, forHeaderWithReuseIdentifier identifier: String) {
         register(
             UINib(nibName: name, bundle: Bundle.main),
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: identifier
-        )
-    }
-
-    func registerNib(nibName name: String, forFooterWithReuseIdentifier identifier: String) {
-        register(
-            UINib(nibName: name, bundle: Bundle.main),
-            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
             withReuseIdentifier: identifier
         )
     }

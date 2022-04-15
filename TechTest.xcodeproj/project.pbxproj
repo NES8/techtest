@@ -24,7 +24,8 @@
 		258B9F0627FB8DAA00E02DF3 /* MarvelList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258B9F0527FB8DAA00E02DF3 /* MarvelList.storyboard */; };
 		25D0DE0C2801959600AC7D67 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0DE0B2801959500AC7D67 /* Core.framework */; };
 		25D0DE0D2801959600AC7D67 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0DE0B2801959500AC7D67 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		25E3396128033C51008F6691 /* MarvelListCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E3396028033C51008F6691 /* MarvelListCollectionViewDataSource.swift */; };
+		25D52099280994F100CAF805 /* MarvelListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D52098280994F100CAF805 /* MarvelListSection.swift */; };
+		25D5209B2809984000CAF805 /* MarvelListSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5209A2809984000CAF805 /* MarvelListSectionHeaderView.swift */; };
 		25FDDD982802DE3800DB0C48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDD972802DE3800DB0C48 /* BaseViewController.swift */; };
 		25FDDD9A2802DF6A00DB0C48 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDD992802DF6A00DB0C48 /* BasePresenter.swift */; };
 		25FDDF082802E4B200DB0C48 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25FDDF062802E4B200DB0C48 /* LoadingView.xib */; };
@@ -102,7 +103,8 @@
 		254C24A127F98A6E005F900F /* Mockfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Mockfile; sourceTree = SOURCE_ROOT; };
 		258B9F0527FB8DAA00E02DF3 /* MarvelList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MarvelList.storyboard; sourceTree = "<group>"; };
 		25D0DE0B2801959500AC7D67 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		25E3396028033C51008F6691 /* MarvelListCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		25D52098280994F100CAF805 /* MarvelListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListSection.swift; sourceTree = "<group>"; };
+		25D5209A2809984000CAF805 /* MarvelListSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListSectionHeaderView.swift; sourceTree = "<group>"; };
 		25FDDD972802DE3800DB0C48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		25FDDD992802DF6A00DB0C48 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		25FDDF062802E4B200DB0C48 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
@@ -304,7 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				254C218627F85752005F900F /* MarvelListViewController.swift */,
-				25E3396028033C51008F6691 /* MarvelListCollectionViewDataSource.swift */,
+				25D52098280994F100CAF805 /* MarvelListSection.swift */,
+				25D5209A2809984000CAF805 /* MarvelListSectionHeaderView.swift */,
 				258B9F0527FB8DAA00E02DF3 /* MarvelList.storyboard */,
 				25FDDF362803388E00DB0C48 /* Cell */,
 			);
@@ -647,10 +650,11 @@
 				25FDDF1F2802F8EC00DB0C48 /* MarvelListServiceProvider.swift in Sources */,
 				25FDDF282803010A00DB0C48 /* MessageView.swift in Sources */,
 				25FDDF192802F02600DB0C48 /* Strings.swift in Sources */,
+				25D5209B2809984000CAF805 /* MarvelListSectionHeaderView.swift in Sources */,
 				253842AD27FB84C6005AFD1D /* AppServiceProvider.swift in Sources */,
-				25E3396128033C51008F6691 /* MarvelListCollectionViewDataSource.swift in Sources */,
 				25FDDF212802F96700DB0C48 /* MarvelListService.swift in Sources */,
 				25FDDF232802FA2000DB0C48 /* UIStoryboard+instantiate.swift in Sources */,
+				25D52099280994F100CAF805 /* MarvelListSection.swift in Sources */,
 				25FDDF272803010A00DB0C48 /* MessageViewProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
