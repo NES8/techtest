@@ -8,10 +8,10 @@ public protocol MarvelListService {
 struct MarvelListServiceLocator: MarvelListService {
 
     func provideMarvelListViewController() -> UIViewController {
-        let vc = UIStoryboard(name: "MarvelList").instantiateRootViewController() as MarvelListViewController
-        vc.presenter = MarvelListPresenter(
-            ui: vc
+        let viewController = UIStoryboard(name: "MarvelList").instantiateRootViewController() as MarvelListViewController
+        viewController.presenter = MarvelListPresenter(
+            ui: viewController
         )
-        return vc
+        return UINavigationController(rootViewController: viewController)
     }
 }
