@@ -26,6 +26,8 @@
 		25D0DE0D2801959600AC7D67 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0DE0B2801959500AC7D67 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		25D52099280994F100CAF805 /* MarvelListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D52098280994F100CAF805 /* MarvelListSection.swift */; };
 		25D5209B2809984000CAF805 /* MarvelListSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5209A2809984000CAF805 /* MarvelListSectionHeaderView.swift */; };
+		25D5209D280C155C00CAF805 /* SectionTypeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5209C280C155C00CAF805 /* SectionTypeMapper.swift */; };
+		25D52225280C26B100CAF805 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D52224280C26B100CAF805 /* UIDevice.swift */; };
 		25FDDD982802DE3800DB0C48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDD972802DE3800DB0C48 /* BaseViewController.swift */; };
 		25FDDD9A2802DF6A00DB0C48 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FDDD992802DF6A00DB0C48 /* BasePresenter.swift */; };
 		25FDDF082802E4B200DB0C48 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25FDDF062802E4B200DB0C48 /* LoadingView.xib */; };
@@ -105,6 +107,8 @@
 		25D0DE0B2801959500AC7D67 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D52098280994F100CAF805 /* MarvelListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListSection.swift; sourceTree = "<group>"; };
 		25D5209A2809984000CAF805 /* MarvelListSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelListSectionHeaderView.swift; sourceTree = "<group>"; };
+		25D5209C280C155C00CAF805 /* SectionTypeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTypeMapper.swift; sourceTree = "<group>"; };
+		25D52224280C26B100CAF805 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		25FDDD972802DE3800DB0C48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		25FDDD992802DF6A00DB0C48 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		25FDDF062802E4B200DB0C48 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				25FDDF32280336C500DB0C48 /* UICollectionView+ReusableItem.swift */,
+				25D52224280C26B100CAF805 /* UIDevice.swift */,
 				25FDDF1B2802F4E800DB0C48 /* UIView+Load.swift */,
 				25FDDF222802FA2000DB0C48 /* UIStoryboard+instantiate.swift */,
 			);
@@ -307,6 +312,7 @@
 			children = (
 				254C218627F85752005F900F /* MarvelListViewController.swift */,
 				25D52098280994F100CAF805 /* MarvelListSection.swift */,
+				25D5209C280C155C00CAF805 /* SectionTypeMapper.swift */,
 				25D5209A2809984000CAF805 /* MarvelListSectionHeaderView.swift */,
 				258B9F0527FB8DAA00E02DF3 /* MarvelList.storyboard */,
 				25FDDF362803388E00DB0C48 /* Cell */,
@@ -633,6 +639,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25D52225280C26B100CAF805 /* UIDevice.swift in Sources */,
 				25FDDF33280336C500DB0C48 /* UICollectionView+ReusableItem.swift in Sources */,
 				254C232927F8A6B4005F900F /* MarvelListPresenter.swift in Sources */,
 				25FDDD9A2802DF6A00DB0C48 /* BasePresenter.swift in Sources */,
@@ -647,6 +654,7 @@
 				25FDDD982802DE3800DB0C48 /* BaseViewController.swift in Sources */,
 				25FDDF1C2802F4E800DB0C48 /* UIView+Load.swift in Sources */,
 				253842AF27FB8518005AFD1D /* AppUITask.swift in Sources */,
+				25D5209D280C155C00CAF805 /* SectionTypeMapper.swift in Sources */,
 				25FDDF1F2802F8EC00DB0C48 /* MarvelListServiceProvider.swift in Sources */,
 				25FDDF282803010A00DB0C48 /* MessageView.swift in Sources */,
 				25FDDF192802F02600DB0C48 /* Strings.swift in Sources */,
@@ -851,6 +859,7 @@
 				INFOPLIST_FILE = TechTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -880,6 +889,7 @@
 				INFOPLIST_FILE = TechTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
