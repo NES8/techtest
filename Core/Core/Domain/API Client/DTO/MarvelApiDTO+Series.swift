@@ -5,12 +5,14 @@ extension MarvelApiDTO.Series {
     // MARK: - Result
     struct Result: Decodable {
         let id: Int
-        let title, resultDescription, resourceURI: String
-        let urls: [MarvelApiDTO.URLElement]
-        let startYear, endYear, rating, modified: String
-        let thumbnail: MarvelApiDTO.Thumbnail
-        let comics, stories, events, characters, creators: MarvelApiDTO.Element
-        let next, previous: MarvelApiDTO.Item
+        let title: String
+        let resultDescription, resourceURI: String?
+        let urls: [MarvelApiDTO.URLElement]?
+        let startYear, endYear: Int?
+        let rating, modified: String?
+        let thumbnail: MarvelApiDTO.Thumbnail?
+        let comics, stories, events, characters, creators: MarvelApiDTO.Element?
+        let next, previous: MarvelApiDTO.Item?
 
         enum CodingKeys: String, CodingKey {
             case id, title
@@ -22,18 +24,17 @@ extension MarvelApiDTO.Series {
 
 extension MarvelApiDTO.Series.Result: MarvelApiDomainEntity {
     var domainEntity: Marvel.MarvelEntity {
-        let wikiUrl = urls.first(where: { $0.type == .wiki })?.url
-        let detailUrl = urls.first(where: { $0.type == .detail })?.url
-        let thumbnailUrl = URL(string: thumbnail.path + "/portrait_fantastic." + thumbnail.thumbnailExtension)
+        let thumbnailUrl: URL? = {
+            guard let path = thumbnail?.path, let ext = thumbnail?.thumbnailExtension else { return nil }
+            return URL(string: path + "." + ext)
+        }()
 
         return Marvel.MarvelEntity(
             id: id,
             name: title,
             description: resultDescription,
             source: .series,
-            thumbnailURL: thumbnailUrl,
-            wikiURL: wikiUrl,
-            detailURL: detailUrl
+            thumbnailURL: thumbnailUrl
         )
     }
 }

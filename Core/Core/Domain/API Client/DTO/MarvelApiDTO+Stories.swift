@@ -5,11 +5,12 @@ extension MarvelApiDTO.Stories {
     // MARK: - Result
     struct Result: Decodable {
         let id: Int
-        let title, resultDescription, resourceURI: String
-        let type, modified: String
-        let thumbnail: MarvelApiDTO.Thumbnail
-        let comics, series, events, characters, creators: MarvelApiDTO.Element
-        let originalissue: MarvelApiDTO.Item
+        let title: String
+        let resultDescription, resourceURI: String?
+        let type, modified: String?
+        let thumbnail: MarvelApiDTO.Thumbnail?
+        let comics, series, events, characters, creators: MarvelApiDTO.Element?
+        let originalissue: MarvelApiDTO.Item?
 
         enum CodingKeys: String, CodingKey {
             case id, title
@@ -21,16 +22,17 @@ extension MarvelApiDTO.Stories {
 
 extension MarvelApiDTO.Stories.Result: MarvelApiDomainEntity {
     var domainEntity: Marvel.MarvelEntity {
-        let thumbnailUrl = URL(string: thumbnail.path + "/portrait_fantastic." + thumbnail.thumbnailExtension)
+        let thumbnailUrl: URL? = {
+            guard let path = thumbnail?.path, let ext = thumbnail?.thumbnailExtension else { return nil }
+            return URL(string: path + "." + ext)
+        }()
 
         return Marvel.MarvelEntity(
             id: id,
             name: title,
             description: resultDescription,
             source: .stories,
-            thumbnailURL: thumbnailUrl,
-            wikiURL: nil,
-            detailURL: nil
+            thumbnailURL: thumbnailUrl
         )
     }
 }
