@@ -21,6 +21,7 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Asset {
   internal static let errorConnectionIcon = ImageAsset(name: "error_connection_icon")
   internal static let errorUnknownIcon = ImageAsset(name: "error_unknown_icon")
+  internal static let noPicture = ImageAsset(name: "no_picture")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

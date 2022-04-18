@@ -1,8 +1,8 @@
 import Foundation
 
 public enum Marvel {
-    public  enum Source {
-        case character
+    public enum Source {
+        case characters
         case comics
         case creators
         case events
@@ -11,30 +11,24 @@ public enum Marvel {
     }
 
     public struct MarvelEntity: Equatable {
-        let id: Int
-        let name: String
-        let description: String
-        let source: Source
-        let thumbnailURL: URL?
-        let wikiURL: URL?
-        let detailURL: URL?
+        public let id: Int
+        public let name: String
+        public let description: String?
+        public let source: Source
+        public let thumbnailURL: URL?
 
         public init(
             id: Int,
             name: String,
-            description: String,
+            description: String?,
             source: Source,
-            thumbnailURL: URL?,
-            wikiURL: URL?,
-            detailURL: URL?
+            thumbnailURL: URL?
         ) {
             self.id = id
             self.name = name
             self.description = description
             self.source = source
             self.thumbnailURL = thumbnailURL
-            self.wikiURL = wikiURL
-            self.detailURL = detailURL
         }
     }
 }

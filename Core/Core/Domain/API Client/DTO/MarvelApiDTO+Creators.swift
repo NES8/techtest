@@ -6,18 +6,19 @@ extension MarvelApiDTO.Creators {
     struct Result: Decodable {
         let id: Int
         let firstName, middleName, lastName: String
-        let suffix, fullName, resourceURI: String
-        let urls: [MarvelApiDTO.URLElement]
-        let thumbnail: MarvelApiDTO.Thumbnail
-        let series, stories, comics, events: MarvelApiDTO.Element
+        let suffix, fullName, resourceURI: String?
+        let urls: [MarvelApiDTO.URLElement]?
+        let thumbnail: MarvelApiDTO.Thumbnail?
+        let series, stories, comics, events: MarvelApiDTO.Element?
     }
 }
 
 extension MarvelApiDTO.Creators.Result: MarvelApiDomainEntity {
     var domainEntity: Marvel.MarvelEntity {
-        let wikiUrl = urls.first(where: { $0.type == .wiki })?.url
-        let detailUrl = urls.first(where: { $0.type == .detail })?.url
-        let thumbnailUrl = URL(string: thumbnail.path + "/portrait_fantastic." + thumbnail.thumbnailExtension)
+        let thumbnailUrl: URL? = {
+            guard let path = thumbnail?.path, let ext = thumbnail?.thumbnailExtension else { return nil }
+            return URL(string: path + "." + ext)
+        }()
         let title = [firstName, middleName, lastName].joined(separator: " ")
 
         return Marvel.MarvelEntity(
@@ -25,9 +26,7 @@ extension MarvelApiDTO.Creators.Result: MarvelApiDomainEntity {
             name: title,
             description: "",
             source: .creators,
-            thumbnailURL: thumbnailUrl,
-            wikiURL: wikiUrl,
-            detailURL: detailUrl
+            thumbnailURL: thumbnailUrl
         )
     }
 }

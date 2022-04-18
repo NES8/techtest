@@ -57,20 +57,6 @@ open class APIClientMock: APIClient, Mock {
 
 
 
-    open func getCharacters() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getCharacters)
-		let perform = methodPerformValue(.m_getCharacters) as? () -> Void
-		perform?()
-		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
-		do {
-		    __value = try methodReturnValue(.m_getCharacters).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getCharacters(). Use given")
-			Failure("Stub return value not specified for getCharacters(). Use given")
-		}
-		return __value
-    }
-
     open func getCharacters(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         addInvocation(.m_getCharacters__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
 		let perform = methodPerformValue(.m_getCharacters__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
@@ -81,20 +67,6 @@ open class APIClientMock: APIClient, Mock {
 		} catch {
 			onFatalFailure("Stub return value not specified for getCharacters(nameStartsWith: String?). Use given")
 			Failure("Stub return value not specified for getCharacters(nameStartsWith: String?). Use given")
-		}
-		return __value
-    }
-
-    open func getComics() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getComics)
-		let perform = methodPerformValue(.m_getComics) as? () -> Void
-		perform?()
-		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
-		do {
-		    __value = try methodReturnValue(.m_getComics).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getComics(). Use given")
-			Failure("Stub return value not specified for getComics(). Use given")
 		}
 		return __value
     }
@@ -113,20 +85,6 @@ open class APIClientMock: APIClient, Mock {
 		return __value
     }
 
-    open func getCreators() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getCreators)
-		let perform = methodPerformValue(.m_getCreators) as? () -> Void
-		perform?()
-		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
-		do {
-		    __value = try methodReturnValue(.m_getCreators).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getCreators(). Use given")
-			Failure("Stub return value not specified for getCreators(). Use given")
-		}
-		return __value
-    }
-
     open func getCreators(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         addInvocation(.m_getCreators__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
 		let perform = methodPerformValue(.m_getCreators__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
@@ -137,20 +95,6 @@ open class APIClientMock: APIClient, Mock {
 		} catch {
 			onFatalFailure("Stub return value not specified for getCreators(nameStartsWith: String?). Use given")
 			Failure("Stub return value not specified for getCreators(nameStartsWith: String?). Use given")
-		}
-		return __value
-    }
-
-    open func getEvents() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getEvents)
-		let perform = methodPerformValue(.m_getEvents) as? () -> Void
-		perform?()
-		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
-		do {
-		    __value = try methodReturnValue(.m_getEvents).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getEvents(). Use given")
-			Failure("Stub return value not specified for getEvents(). Use given")
 		}
 		return __value
     }
@@ -169,20 +113,6 @@ open class APIClientMock: APIClient, Mock {
 		return __value
     }
 
-    open func getSeries() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getSeries)
-		let perform = methodPerformValue(.m_getSeries) as? () -> Void
-		perform?()
-		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
-		do {
-		    __value = try methodReturnValue(.m_getSeries).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getSeries(). Use given")
-			Failure("Stub return value not specified for getSeries(). Use given")
-		}
-		return __value
-    }
-
     open func getSeries(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         addInvocation(.m_getSeries__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
 		let perform = methodPerformValue(.m_getSeries__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
@@ -193,20 +123,6 @@ open class APIClientMock: APIClient, Mock {
 		} catch {
 			onFatalFailure("Stub return value not specified for getSeries(nameStartsWith: String?). Use given")
 			Failure("Stub return value not specified for getSeries(nameStartsWith: String?). Use given")
-		}
-		return __value
-    }
-
-    open func getStories() -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getStories)
-		let perform = methodPerformValue(.m_getStories) as? () -> Void
-		perform?()
-		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
-		do {
-		    __value = try methodReturnValue(.m_getStories).casted()
-		} catch {
-			onFatalFailure("Stub return value not specified for getStories(). Use given")
-			Failure("Stub return value not specified for getStories(). Use given")
 		}
 		return __value
     }
@@ -227,57 +143,39 @@ open class APIClientMock: APIClient, Mock {
 
 
     fileprivate enum MethodType {
-        case m_getCharacters
         case m_getCharacters__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getComics
         case m_getComics__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getCreators
         case m_getCreators__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getEvents
         case m_getEvents__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getSeries
         case m_getSeries__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getStories
         case m_getStories__nameStartsWith_nameStartsWith(Parameter<String?>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_getCharacters, .m_getCharacters): return .match
-
             case (.m_getCharacters__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getCharacters__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
 				return Matcher.ComparisonResult(results)
-
-            case (.m_getComics, .m_getComics): return .match
 
             case (.m_getComics__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getComics__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_getCreators, .m_getCreators): return .match
-
             case (.m_getCreators__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getCreators__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
 				return Matcher.ComparisonResult(results)
-
-            case (.m_getEvents, .m_getEvents): return .match
 
             case (.m_getEvents__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getEvents__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_getSeries, .m_getSeries): return .match
-
             case (.m_getSeries__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getSeries__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
 				return Matcher.ComparisonResult(results)
-
-            case (.m_getStories, .m_getStories): return .match
 
             case (.m_getStories__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getStories__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
 				var results: [Matcher.ParameterComparisonResult] = []
@@ -289,33 +187,21 @@ open class APIClientMock: APIClient, Mock {
 
         func intValue() -> Int {
             switch self {
-            case .m_getCharacters: return 0
             case let .m_getCharacters__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case .m_getComics: return 0
             case let .m_getComics__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case .m_getCreators: return 0
             case let .m_getCreators__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case .m_getEvents: return 0
             case let .m_getEvents__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case .m_getSeries: return 0
             case let .m_getSeries__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case .m_getStories: return 0
             case let .m_getStories__nameStartsWith_nameStartsWith(p0): return p0.intValue
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_getCharacters: return ".getCharacters()"
             case .m_getCharacters__nameStartsWith_nameStartsWith: return ".getCharacters(nameStartsWith:)"
-            case .m_getComics: return ".getComics()"
             case .m_getComics__nameStartsWith_nameStartsWith: return ".getComics(nameStartsWith:)"
-            case .m_getCreators: return ".getCreators()"
             case .m_getCreators__nameStartsWith_nameStartsWith: return ".getCreators(nameStartsWith:)"
-            case .m_getEvents: return ".getEvents()"
             case .m_getEvents__nameStartsWith_nameStartsWith: return ".getEvents(nameStartsWith:)"
-            case .m_getSeries: return ".getSeries()"
             case .m_getSeries__nameStartsWith_nameStartsWith: return ".getSeries(nameStartsWith:)"
-            case .m_getStories: return ".getStories()"
             case .m_getStories__nameStartsWith_nameStartsWith: return ".getStories(nameStartsWith:)"
             }
         }
@@ -330,59 +216,27 @@ open class APIClientMock: APIClient, Mock {
         }
 
 
-        public static func getCharacters(willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getCharacters, products: willReturn.map({ StubProduct.return($0 as Any) }))
-        }
         public static func getCharacters(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
             return Given(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
-        }
-        public static func getComics(willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getComics, products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
         public static func getComics(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
             return Given(method: .m_getComics__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getCreators(willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getCreators, products: willReturn.map({ StubProduct.return($0 as Any) }))
-        }
         public static func getCreators(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
             return Given(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
-        }
-        public static func getEvents(willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getEvents, products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
         public static func getEvents(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
             return Given(method: .m_getEvents__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getSeries(willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getSeries, products: willReturn.map({ StubProduct.return($0 as Any) }))
-        }
         public static func getSeries(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
             return Given(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
-        }
-        public static func getStories(willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getStories, products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
         public static func getStories(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
             return Given(method: .m_getStories__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getCharacters(willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
-            let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getCharacters, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
-			willProduce(stubber)
-			return given
-        }
         public static func getCharacters(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
 			let given: Given = { return Given(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
-			willProduce(stubber)
-			return given
-        }
-        public static func getComics(willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
-            let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getComics, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
@@ -394,23 +248,9 @@ open class APIClientMock: APIClient, Mock {
 			willProduce(stubber)
 			return given
         }
-        public static func getCreators(willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
-            let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getCreators, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
-			willProduce(stubber)
-			return given
-        }
         public static func getCreators(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
 			let given: Given = { return Given(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
-			willProduce(stubber)
-			return given
-        }
-        public static func getEvents(willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
-            let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getEvents, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
@@ -422,23 +262,9 @@ open class APIClientMock: APIClient, Mock {
 			willProduce(stubber)
 			return given
         }
-        public static func getSeries(willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
-            let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getSeries, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
-			willProduce(stubber)
-			return given
-        }
         public static func getSeries(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
 			let given: Given = { return Given(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
-			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
-			willProduce(stubber)
-			return given
-        }
-        public static func getStories(willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
-            let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getStories, products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
@@ -455,17 +281,11 @@ open class APIClientMock: APIClient, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func getCharacters() -> Verify { return Verify(method: .m_getCharacters)}
         public static func getCharacters(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getComics() -> Verify { return Verify(method: .m_getComics)}
         public static func getComics(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getComics__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getCreators() -> Verify { return Verify(method: .m_getCreators)}
         public static func getCreators(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getEvents() -> Verify { return Verify(method: .m_getEvents)}
         public static func getEvents(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getEvents__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getSeries() -> Verify { return Verify(method: .m_getSeries)}
         public static func getSeries(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getStories() -> Verify { return Verify(method: .m_getStories)}
         public static func getStories(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getStories__nameStartsWith_nameStartsWith(`nameStartsWith`))}
     }
 
@@ -473,38 +293,20 @@ open class APIClientMock: APIClient, Mock {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func getCharacters(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getCharacters, performs: perform)
-        }
         public static func getCharacters(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
             return Perform(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
-        }
-        public static func getComics(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getComics, performs: perform)
         }
         public static func getComics(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
             return Perform(method: .m_getComics__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
         }
-        public static func getCreators(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getCreators, performs: perform)
-        }
         public static func getCreators(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
             return Perform(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
-        }
-        public static func getEvents(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getEvents, performs: perform)
         }
         public static func getEvents(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
             return Perform(method: .m_getEvents__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
         }
-        public static func getSeries(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getSeries, performs: perform)
-        }
         public static func getSeries(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
             return Perform(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
-        }
-        public static func getStories(perform: @escaping () -> Void) -> Perform {
-            return Perform(method: .m_getStories, performs: perform)
         }
         public static func getStories(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
             return Perform(method: .m_getStories__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
@@ -628,41 +430,42 @@ open class GetMarvelEntityUseCaseMock: GetMarvelEntityUseCase, Mock {
 
 
 
-    open func callAsFunction(type: Marvel.Source) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_callAsFunction__type_type(Parameter<Marvel.Source>.value(`type`)))
-		let perform = methodPerformValue(.m_callAsFunction__type_type(Parameter<Marvel.Source>.value(`type`))) as? (Marvel.Source) -> Void
-		perform?(`type`)
+    open func callAsFunction(type: Marvel.Source, filter: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>.value(`type`), Parameter<String?>.value(`filter`)))
+		let perform = methodPerformValue(.m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>.value(`type`), Parameter<String?>.value(`filter`))) as? (Marvel.Source, String?) -> Void
+		perform?(`type`, `filter`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_callAsFunction__type_type(Parameter<Marvel.Source>.value(`type`))).casted()
+		    __value = try methodReturnValue(.m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>.value(`type`), Parameter<String?>.value(`filter`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for callAsFunction(type: Marvel.Source). Use given")
-			Failure("Stub return value not specified for callAsFunction(type: Marvel.Source). Use given")
+			onFatalFailure("Stub return value not specified for callAsFunction(type: Marvel.Source, filter: String?). Use given")
+			Failure("Stub return value not specified for callAsFunction(type: Marvel.Source, filter: String?). Use given")
 		}
 		return __value
     }
 
 
     fileprivate enum MethodType {
-        case m_callAsFunction__type_type(Parameter<Marvel.Source>)
+        case m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>, Parameter<String?>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_callAsFunction__type_type(let lhsType), .m_callAsFunction__type_type(let rhsType)):
+            case (.m_callAsFunction__type_typefilter_filter(let lhsType, let lhsFilter), .m_callAsFunction__type_typefilter_filter(let rhsType, let rhsFilter)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsType, rhs: rhsType, with: matcher), lhsType, rhsType, "type"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsFilter, rhs: rhsFilter, with: matcher), lhsFilter, rhsFilter, "filter"))
 				return Matcher.ComparisonResult(results)
             }
         }
 
         func intValue() -> Int {
             switch self {
-            case let .m_callAsFunction__type_type(p0): return p0.intValue
+            case let .m_callAsFunction__type_typefilter_filter(p0, p1): return p0.intValue + p1.intValue
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_callAsFunction__type_type: return ".callAsFunction(type:)"
+            case .m_callAsFunction__type_typefilter_filter: return ".callAsFunction(type:filter:)"
             }
         }
     }
@@ -676,12 +479,12 @@ open class GetMarvelEntityUseCaseMock: GetMarvelEntityUseCase, Mock {
         }
 
 
-        public static func callAsFunction(type: Parameter<Marvel.Source>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_callAsFunction__type_type(`type`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func callAsFunction(type: Parameter<Marvel.Source>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_callAsFunction__type_type(`type`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
@@ -691,15 +494,15 @@ open class GetMarvelEntityUseCaseMock: GetMarvelEntityUseCase, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func callAsFunction(type: Parameter<Marvel.Source>) -> Verify { return Verify(method: .m_callAsFunction__type_type(`type`))}
+        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>) -> Verify { return Verify(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`))}
     }
 
     public struct Perform {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func callAsFunction(type: Parameter<Marvel.Source>, perform: @escaping (Marvel.Source) -> Void) -> Perform {
-            return Perform(method: .m_callAsFunction__type_type(`type`), performs: perform)
+        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>, perform: @escaping (Marvel.Source, String?) -> Void) -> Perform {
+            return Perform(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`), performs: perform)
         }
     }
 

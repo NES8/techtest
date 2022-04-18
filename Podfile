@@ -13,6 +13,8 @@ target 'TechTest' do
   target 'TechTestTests' do
     inherit! :search_paths
     pod 'SwiftyMocky', '~> 4.1.0'
+    pod 'Nimble', '~> 9.2.0'
+
   end
 
   target 'TechTestUITests' do

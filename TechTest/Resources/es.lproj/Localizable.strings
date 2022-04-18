@@ -3,4 +3,16 @@
 "MessageView ErrorUnknow Description" = "Por favor, espere un rato y vuelva a intentarlo";
 "MessageView ErrorConnection Title" = "Error de conexión";
 "MessageView ErrorConnection Description" = "Verifique su conexión a internet y vuelva a intentarlo";
+"MessageView EmptyCase Title" = "Sin resultados";
+"MessageView EmptyCase Description" = "Por favor, cambia los filtros";
+"MessageView DefaultAnswer ButtonTitle" = "OK";
 "Retry" = "Reintentar";
+"List Title" = "Universo Marvel";
+"List Search Placeholder" = "Empieza por...";
+"List SectionTitle characters" = "Personajes";
+"List SectionTitle comics" = "Cómics";
+"List SectionTitle creators" = "Creadores";
+"List SectionTitle events" = "Eventos";
+"List SectionTitle series" = "Series";
+"List SectionTitle all" = "Sin filtro";
+"List FilterMenu Title" = "Filtrar";

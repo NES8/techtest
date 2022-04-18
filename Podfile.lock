@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.5.0)
+  - Nimble (9.2.1)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.5.0)
+  - Nimble (~> 9.2.0)
   - SDWebImage (~> 5.0.0)
   - SwiftGen (~> 6.0)
   - SwiftyMocky (~> 4.1.0)
@@ -17,6 +19,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Nimble
     - SDWebImage
     - Sourcery
     - SwiftGen
@@ -24,11 +27,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   Sourcery: 744f43178637c79bf23127dfe34e2103b3f28499
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
   SwiftyMocky: 014739247afadb65efb5bb92ede32c22b9365762
 
-PODFILE CHECKSUM: 2bf7fa3ba814b6fef3427fade0abf94a970fbfe7
+PODFILE CHECKSUM: f61756a41427e4b53f0c99d2af5255b792e07e0f
 
 COCOAPODS: 1.11.3
