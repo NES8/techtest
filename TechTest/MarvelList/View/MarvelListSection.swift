@@ -11,7 +11,7 @@ class Section: Hashable {
 
         init?(source: Marvel.Source) {
             switch source {
-            case .character:
+            case .characters:
                 self = .characters
             case .comics:
                 self = .comics

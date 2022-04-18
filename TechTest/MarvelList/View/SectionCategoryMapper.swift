@@ -1,12 +1,12 @@
 import Core
 
-struct SectionTypeMapper {
-    func map(_ sectionCategory: Section.Category) -> Marvel.Source? {
-        switch sectionCategory {
+struct SectionCategoryMapper {
+    func map(_ category: Section.Category) -> Marvel.Source? {
+        switch category {
         case .all:
             return nil
         case .characters:
-            return .character
+            return .characters
         case .comics:
             return .comics
         case .creators:

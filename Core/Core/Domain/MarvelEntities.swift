@@ -2,7 +2,7 @@ import Foundation
 
 public enum Marvel {
     public enum Source {
-        case character
+        case characters
         case comics
         case creators
         case events

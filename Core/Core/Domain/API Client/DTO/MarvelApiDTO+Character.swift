@@ -31,7 +31,7 @@ extension MarvelApiDTO.Character.Result: MarvelApiDomainEntity {
             id: id,
             name: name,
             description: resultDescription,
-            source: .character,
+            source: .characters,
             thumbnailURL: thumbnailUrl
         )
     }

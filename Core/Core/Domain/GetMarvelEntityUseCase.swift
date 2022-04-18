@@ -13,7 +13,7 @@ public class GetMarvelEntity: GetMarvelEntityUseCase {
 
     public func callAsFunction(type: Marvel.Source, filter: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
         switch type {
-        case .character:
+        case .characters:
             return apiClient.getCharacters(nameStartsWith: filter)
         case .comics:
             return apiClient.getComics(nameStartsWith: filter)

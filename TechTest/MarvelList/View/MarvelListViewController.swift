@@ -12,7 +12,7 @@ class MarvelListViewController: UICollectionViewController {
     private var sections = [Section]()
     private lazy var dataSource = makeDataSource()
     private var searchController = UISearchController(searchResultsController: nil)
-    private let sectionMapper = SectionTypeMapper()
+    private let sectionMapper = SectionCategoryMapper()
 
     var presenter: MarvelListPresenter!
 
