@@ -37,5 +37,7 @@ class MarvelListCollectionViewCell: UICollectionViewCell {
 
         pictureImageView.sd_setImage(with: viewModel.pictureURL,
                                      placeholderImage: Asset.noPicture.image)
+
+        titleLabel.accessibilityIdentifier = A21r.List.Cell.content(title: viewModel.title).rawValue
     }
 }

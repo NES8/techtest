@@ -17,7 +17,7 @@ class MarvelAPIClient: APIClient {
         static let limit = 3
     }
 
-    private enum Endpoint: String {
+    enum Endpoint: String {
         case characters
         case comics
         case creators
