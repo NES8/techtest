@@ -7,7 +7,14 @@ import XCTest
 // Edit Scheme... -> Test -> Options -> App Language
 
 class TechTestUITests: BaseUITests {
-    private let title = "Test 3-D Man"
+
+    private struct Texts {
+        static let characterTitle = "Test 3-D Man"
+        static let comicsTitle = "Test Marvel Previews (2017)"
+        static let creatorsTitle = "Test #O  "
+        static let eventsTitle = "Test Acts of Vengeance!"
+        static let seriesTitle = "Test Fantastic Four by Dan Slott Vol. 1 (2021)"
+    }
 
     func testListWithCharacters() throws {
         givenListFullMockedRequest()
@@ -16,36 +23,81 @@ class TechTestUITests: BaseUITests {
         let scrollView = app.collectionViews[A21r.List.collectionView.rawValue]
         XCTAssertTrue(waitForElement(scrollView))
 
-        let cell = app.staticTexts[A21r.List.Cell.content(title: title).rawValue]
+        let cell = app.staticTexts[A21r.List.Cell.content(title: Texts.characterTitle).rawValue]
         XCTAssertTrue(waitForElement(cell))
     }
-/*
- case all
- case characters
- case comics
- case creators
- case events
- case series
 
- */
     func testListFilterByComics() {
         givenListFullMockedRequest()
         givenApp()
 
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Comics"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.comicsTitle]
+        XCTAssertTrue(waitForElement(cell))
+    }
+
+    func testListFilterByCreators() {
+        givenListFullMockedRequest()
+        givenApp()
+
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Creators"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.creatorsTitle]
+        XCTAssertTrue(waitForElement(cell))
+    }
+
+    func testListFilterByEvents() {
+        givenListFullMockedRequest()
+        givenApp()
+
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Events"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.eventsTitle]
+        XCTAssertTrue(waitForElement(cell))
+    }
+
+    func testListFilterBySeries() {
+        givenListFullMockedRequest()
+        givenApp()
+
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Series"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.seriesTitle]
+        XCTAssertTrue(waitForElement(cell))
+    }
+
+    // MARK: - Actions
+
+    private func openSearchFilter() {
         let navigationBar = app.navigationBars["Marvel Universe"]
         let searchBarButton = navigationBar.buttons["Search"]
 
         searchBarButton.tap()
-
-        let actionSheet = app.sheets["Filter"]
-        let comicsButton = actionSheet.scrollViews.otherElements.buttons["Comics"]
-
-        comicsButton.tap()
-        comicsButton.tap()
-
-        let cell = app.staticTexts["Marvel Previews (2017)"]
-        XCTAssertTrue(waitForElement(cell))
     }
+
+    private var actionSheetFilterButtons: XCUIElementQuery {
+        let actionSheet = app.sheets["Filter"]
+        return actionSheet.scrollViews.otherElements.buttons
+    }
+
+    // MARK: - Given
 
     private func givenListFullMockedRequest() {
         givenListMockedRequest(endpoint: .characters)
