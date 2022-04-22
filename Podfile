@@ -18,7 +18,7 @@ target 'TechTest' do
   end
 
   target 'TechTestUITests' do
-    # Pods for testing
+    pod 'Shock', '~> 6.1.0'
   end
 
 end

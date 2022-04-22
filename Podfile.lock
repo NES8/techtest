@@ -1,11 +1,45 @@
 PODS:
+  - _NIODataStructures (2.38.0)
   - Alamofire (5.5.0)
+  - CNIOAtomics (2.38.0)
+  - CNIODarwin (2.38.0)
+  - CNIOHTTPParser (2.38.0)
+  - CNIOLinux (2.38.0)
+  - CNIOWindows (2.38.0)
+  - GRMustache.swift (4.0.1)
   - Nimble (9.2.1)
   - SDWebImage (5.0.6):
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
+  - Shock (6.1.1):
+    - GRMustache.swift (~> 4.0.1)
+    - SwiftNIOHTTP1 (~> 2.38.0)
   - Sourcery (1.6.0)
   - SwiftGen (6.5.1)
+  - SwiftNIO (2.38.0):
+    - SwiftNIOCore (= 2.38.0)
+    - SwiftNIOEmbedded (= 2.38.0)
+    - SwiftNIOPosix (= 2.38.0)
+  - SwiftNIOConcurrencyHelpers (2.38.0):
+    - CNIOAtomics (= 2.38.0)
+  - SwiftNIOCore (2.38.0):
+    - CNIOLinux (= 2.38.0)
+    - SwiftNIOConcurrencyHelpers (= 2.38.0)
+  - SwiftNIOEmbedded (2.38.0):
+    - _NIODataStructures (= 2.38.0)
+    - SwiftNIOCore (= 2.38.0)
+  - SwiftNIOHTTP1 (2.38.0):
+    - CNIOHTTPParser (= 2.38.0)
+    - SwiftNIO (= 2.38.0)
+    - SwiftNIOConcurrencyHelpers (= 2.38.0)
+    - SwiftNIOCore (= 2.38.0)
+  - SwiftNIOPosix (2.38.0):
+    - _NIODataStructures (= 2.38.0)
+    - CNIODarwin (= 2.38.0)
+    - CNIOLinux (= 2.38.0)
+    - CNIOWindows (= 2.38.0)
+    - SwiftNIOConcurrencyHelpers (= 2.38.0)
+    - SwiftNIOCore (= 2.38.0)
   - SwiftyMocky (4.1.0):
     - Sourcery (= 1.6.0)
 
@@ -13,26 +47,55 @@ DEPENDENCIES:
   - Alamofire (~> 5.5.0)
   - Nimble (~> 9.2.0)
   - SDWebImage (~> 5.0.0)
+  - Shock (~> 6.1.0)
   - SwiftGen (~> 6.0)
   - SwiftyMocky (~> 4.1.0)
 
 SPEC REPOS:
   trunk:
+    - _NIODataStructures
     - Alamofire
+    - CNIOAtomics
+    - CNIODarwin
+    - CNIOHTTPParser
+    - CNIOLinux
+    - CNIOWindows
+    - GRMustache.swift
     - Nimble
     - SDWebImage
+    - Shock
     - Sourcery
     - SwiftGen
+    - SwiftNIO
+    - SwiftNIOConcurrencyHelpers
+    - SwiftNIOCore
+    - SwiftNIOEmbedded
+    - SwiftNIOHTTP1
+    - SwiftNIOPosix
     - SwiftyMocky
 
 SPEC CHECKSUMS:
+  _NIODataStructures: d8175e5ca5a34ec19b7ff21de298dd2a4d30818d
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  CNIOAtomics: 00b638e1b0dac91d06d4bb089ea9126c117c6650
+  CNIODarwin: e6cba4513e4f7633981e2e0eb3fca39cfbb834c4
+  CNIOHTTPParser: f3bd2955c9c8669ea2ae0f1f4f03df1fea2ed90d
+  CNIOLinux: f8801300bb296d16dee59a82aba1613a08cfbe23
+  CNIOWindows: 1cc6fb2af1d445f52f2d39cecf7069873f7d5b0d
+  GRMustache.swift: a6436504284b22b4b05daf5f46f77bd3fe00a9a2
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  Shock: 9258930104aad1e7f83b06e8f0ce08bbc15c158c
   Sourcery: 744f43178637c79bf23127dfe34e2103b3f28499
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
+  SwiftNIO: 9bc23fada7254a38f1417533a4514aabdcb7cf31
+  SwiftNIOConcurrencyHelpers: ec57adfc490604a341904994fbf98de61a8b5497
+  SwiftNIOCore: 156fd84c03dc877a5f22d0ba575745cafe4a83ca
+  SwiftNIOEmbedded: b5625cb78841ad4daa50d71a930c768531233770
+  SwiftNIOHTTP1: 2ec5bf1a511b8c04b5da3d9803374dc6077eff57
+  SwiftNIOPosix: b9cee2136fcb51223bf63b00795089c6928dd876
   SwiftyMocky: 014739247afadb65efb5bb92ede32c22b9365762
 
-PODFILE CHECKSUM: f61756a41427e4b53f0c99d2af5255b792e07e0f
+PODFILE CHECKSUM: 32e04befc276c8b7510fbfea3550e925b6e574ec
 
 COCOAPODS: 1.11.3
