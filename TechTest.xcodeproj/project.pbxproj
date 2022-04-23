@@ -10,6 +10,7 @@
 		253842AD27FB84C6005AFD1D /* AppServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253842AC27FB84C6005AFD1D /* AppServiceProvider.swift */; };
 		253842AF27FB8518005AFD1D /* AppUITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253842AE27FB8518005AFD1D /* AppUITask.swift */; };
 		253842B327FB86CF005AFD1D /* WindowSetupTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253842B227FB86CF005AFD1D /* WindowSetupTask.swift */; };
+		254887A4281405D20010026C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 254887A3281405D20010026C /* README.md */; };
 		254C218327F85752005F900F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254C218227F85752005F900F /* AppDelegate.swift */; };
 		254C218527F85752005F900F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254C218427F85752005F900F /* SceneDelegate.swift */; };
 		254C218727F85752005F900F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254C218627F85752005F900F /* ListViewController.swift */; };
@@ -100,6 +101,7 @@
 		253842AC27FB84C6005AFD1D /* AppServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceProvider.swift; sourceTree = "<group>"; };
 		253842AE27FB8518005AFD1D /* AppUITask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITask.swift; sourceTree = "<group>"; };
 		253842B227FB86CF005AFD1D /* WindowSetupTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSetupTask.swift; sourceTree = "<group>"; };
+		254887A3281405D20010026C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		254C217F27F85752005F900F /* TechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		254C218227F85752005F900F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		254C218427F85752005F900F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -229,8 +231,9 @@
 		254C218127F85752005F900F /* TechTest */ = {
 			isa = PBXGroup;
 			children = (
+				254887A3281405D20010026C /* README.md */,
 				253842AB27FB84AD005AFD1D /* App Startup */,
-				25FDDF1D2802F8D000DB0C48 /* MarvelList */,
+				25FDDF1D2802F8D000DB0C48 /* List */,
 				25FDDF2C280332DC00DB0C48 /* Extensions */,
 				25FDDF2A2803010F00DB0C48 /* MessageView */,
 				25FDDF0A2802E4B600DB0C48 /* LoadingView */,
@@ -316,7 +319,7 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		25FDDF1D2802F8D000DB0C48 /* MarvelList */ = {
+		25FDDF1D2802F8D000DB0C48 /* List */ = {
 			isa = PBXGroup;
 			children = (
 				25FDDF2D2803340E00DB0C48 /* View */,
@@ -324,7 +327,7 @@
 				25FDDF1E2802F8EC00DB0C48 /* ListServiceProvider.swift */,
 				25FDDF202802F96700DB0C48 /* ListService.swift */,
 			);
-			path = MarvelList;
+			path = List;
 			sourceTree = "<group>";
 		};
 		25FDDF2A2803010F00DB0C48 /* MessageView */ = {
@@ -511,6 +514,7 @@
 			files = (
 				25FDDF292803010A00DB0C48 /* MessageView.xib in Resources */,
 				254C218F27F85753005F900F /* LaunchScreen.storyboard in Resources */,
+				254887A4281405D20010026C /* README.md in Resources */,
 				254C218C27F85753005F900F /* Assets.xcassets in Resources */,
 				254C218A27F85752005F900F /* Main.storyboard in Resources */,
 				25FDDF142802EF9800DB0C48 /* Localizable.strings in Resources */,

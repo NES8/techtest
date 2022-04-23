@@ -12,7 +12,6 @@ class ListViewController: UICollectionViewController {
     private var sections = [ListSection]()
     private lazy var dataSource = makeDataSource()
     private var searchController = UISearchController(searchResultsController: nil)
-    private let sectionMapper = ListSectionMapper()
 
     var presenter: ListPresenter!
 
