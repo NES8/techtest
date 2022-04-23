@@ -10,7 +10,7 @@ class GetMarvelEntityTests: XCTestCase {
 
     var mockApiClient: APIClientMock!
     var getMarvelEntity: GetMarvelEntityUseCase!
-    let anyCharacter = Marvel.MarvelEntity(id: 1, name: "name", description: "description", source: .characters, thumbnailURL: nil)
+    let anyMarvelEntity = Marvel.MarvelEntity(id: 1, name: "name", description: "description", source: .characters, thumbnailURL: nil)
 
     override func setUp() {
         super.setUp()
@@ -32,14 +32,15 @@ class GetMarvelEntityTests: XCTestCase {
 
     func testFetchesCharacters() throws {
         givenApiClientGetCharacterSucceeds()
-        try expect(getMarvelEntity(type: .characters, filter: nil), toPublish: [anyCharacter])
+        let searchQuery = SearchQuery(type: .characters, filter: nil, pageSize: .small)
+        try expect(getMarvelEntity(searchQuery), toPublish: [anyMarvelEntity])
     }
 
     //MARK: Given
 
     private func givenApiClientGetCharacterSucceeds() {
         Given(mockApiClient, .getCharacters(
-            nameStartsWith: nil, willReturn: .success(value: [anyCharacter])
+            nameStartsWith: nil, pageSize: 3, willReturn: .success(value: [anyMarvelEntity])
         ))
     }
 }
