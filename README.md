@@ -16,18 +16,18 @@ Create an iOS application that communicates with the Public Marvel API
 - Uses 3rd party libraries (CocoaPods)
 
 ### Includes
-✅ List done in iOS 13 style
-⏳ List done in iOS 14 style
-🛠 Item detail
-✅ Unit test
-✅ Integration test
-⏳ UI test
-⏳ Snapshot test
-✅ Universal app
-⏳ Use of Size Classes
-⏳ Animations
-⏳ Custom ViewController transitions
-✅ Documentation
+- ✅ List done in iOS 13 style
+- ⏳ List done in iOS 14 style
+- 🛠 Item detail
+- ✅ Unit test
+- ✅ Integration test
+- ⏳ UI test
+- ⏳ Snapshot test
+- ✅ Universal app
+- ⏳ Use of Size Classes
+- ⏳ Animations
+- ⏳ Custom ViewController transitions
+- ✅ Documentation
 
 # The project
 
