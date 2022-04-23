@@ -1,42 +1,108 @@
-//
-//  TechTestUITests.swift
-//  TechTestUITests
-//
-//  Created by Xavier Serra Soteras on 2/4/22.
-//
-
 import XCTest
+@testable import Core
+@testable import TechTest
 
-class TechTestUITests: XCTestCase {
+// NOTE: Test language is forced to English
+// Edit Scheme... -> Test -> Options -> App Language
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class TechTestUITests: BaseUITests {
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    private struct Texts {
+        static let characterTitle = "Test 3-D Man"
+        static let comicsTitle = "Test Marvel Previews (2017)"
+        static let creatorsTitle = "Test #O  "
+        static let eventsTitle = "Test Acts of Vengeance!"
+        static let seriesTitle = "Test Fantastic Four by Dan Slott Vol. 1 (2021)"
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testListWithCharacters() throws {
+        givenListFullMockedRequest()
+        givenApp()
+
+        let scrollView = app.collectionViews[A21r.List.collectionView.rawValue]
+        XCTAssertTrue(waitForElement(scrollView))
+
+        let cell = app.staticTexts[A21r.List.Cell.content(title: Texts.characterTitle).rawValue]
+        XCTAssertTrue(waitForElement(cell))
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
+    func testListFilterByComics() {
+        givenListFullMockedRequest()
+        givenApp()
 
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Comics"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.comicsTitle]
+        XCTAssertTrue(waitForElement(cell))
     }
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    func testListFilterByCreators() {
+        givenListFullMockedRequest()
+        givenApp()
+
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Creators"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.creatorsTitle]
+        XCTAssertTrue(waitForElement(cell))
+    }
+
+    func testListFilterByEvents() {
+        givenListFullMockedRequest()
+        givenApp()
+
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Events"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.eventsTitle]
+        XCTAssertTrue(waitForElement(cell))
+    }
+
+    func testListFilterBySeries() {
+        givenListFullMockedRequest()
+        givenApp()
+
+        openSearchFilter()
+
+        let optionButton = actionSheetFilterButtons["Series"]
+        optionButton.tap()
+        optionButton.tap()
+
+        let cell = app.staticTexts[Texts.seriesTitle]
+        XCTAssertTrue(waitForElement(cell))
+    }
+
+    // MARK: - Actions
+
+    private func openSearchFilter() {
+        let navigationBar = app.navigationBars["Marvel Universe"]
+        let searchBarButton = navigationBar.buttons["Search"]
+
+        searchBarButton.tap()
+    }
+
+    private var actionSheetFilterButtons: XCUIElementQuery {
+        let actionSheet = app.sheets["Filter"]
+        return actionSheet.scrollViews.otherElements.buttons
+    }
+
+    // MARK: - Given
+
+    private func givenListFullMockedRequest() {
+        givenListMockedRequest(endpoint: .characters)
+        givenListMockedRequest(endpoint: .comics)
+        givenListMockedRequest(endpoint: .creators)
+        givenListMockedRequest(endpoint: .events)
+        givenListMockedRequest(endpoint: .series)
     }
 }

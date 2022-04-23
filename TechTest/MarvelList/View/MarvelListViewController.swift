@@ -21,6 +21,7 @@ class MarvelListViewController: UICollectionViewController {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, MarvelListCollectionModel>
 
     // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
@@ -28,10 +29,48 @@ class MarvelListViewController: UICollectionViewController {
         configureSearchController()
         configureLayout()
         configureNavigationBar()
+        configureAccessibilityIdentifiers()
+
         applySnapshot(animatingDifferences: false)
+
     }
 
-    // MARK: - Functions
+    private func configureNavigationBar() {
+        let searchBarButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(showFilterOptions))
+        searchBarButton.accessibilityIdentifier = A21r.List.searchBarButton.rawValue
+
+        navigationItem.title = L10n.listTitle
+        navigationItem.leftBarButtonItem = searchBarButton
+        navigationItem.titleView?.accessibilityIdentifier = A21r.List.navigationBar.rawValue
+    }
+
+    private func configureAccessibilityIdentifiers() {
+        collectionView.accessibilityIdentifier = A21r.List.collectionView.rawValue
+    }
+
+    // MARK: Filter
+
+    @objc private func showFilterOptions() {
+        let alert = UIAlertController(title: L10n.listFilterMenuTitle, message: nil, preferredStyle: .actionSheet)
+
+        Section.Category.allCases.forEach { category in
+            alert.addAction(UIAlertAction(title: category.localizedTitle, style: .default , handler: { _ in
+                self.didSelect(category: category)
+            }))
+        }
+
+        if UIDevice.isIpad() {
+            alert.popoverPresentationController?.barButtonItem = navigationItem.leftBarButtonItem
+        }
+
+        present(alert, animated: true)
+    }
+
+    private func didSelect(category: Section.Category) {
+        presenter.didSelect(category: category)
+    }
+
+    // MARK: - CollectionView
 
     func makeDataSource() -> DataSource {
         let dataSource = DataSource(
@@ -92,33 +131,6 @@ extension MarvelListViewController: UISearchResultsUpdating {
         searchController.searchBar.placeholder = L10n.listSearchPlaceholder
         navigationItem.searchController = searchController
         definesPresentationContext = true
-    }
-
-    private func configureNavigationBar() {
-        navigationItem.title = L10n.listTitle
-        navigationItem.leftBarButtonItem = .init(barButtonSystemItem: .search, target: self, action: #selector(showFilterOptions))
-    }
-
-    // MARK: Filter
-
-    @objc private func showFilterOptions() {
-        let alert = UIAlertController(title: L10n.listFilterMenuTitle, message: nil, preferredStyle: .actionSheet)
-
-        Section.Category.allCases.forEach { category in
-            alert.addAction(UIAlertAction(title: category.localizedTitle, style: .default , handler: { _ in
-                self.didSelect(category: category)
-            }))
-        }
-
-        if UIDevice.isIpad() {
-            alert.popoverPresentationController?.barButtonItem = navigationItem.leftBarButtonItem
-        }
-
-        present(alert, animated: true)
-    }
-
-    private func didSelect(category: Section.Category) {
-        presenter.didSelect(category: category)
     }
 }
 
