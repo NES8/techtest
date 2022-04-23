@@ -1,12 +1,12 @@
 import Foundation
 import Core
 
-struct MarvelListCollectionModel: Hashable {
+struct ListCollectionModel: Hashable {
     let id: String
     let title: String
     let description: String?
     let pictureURL: URL?
-    let category: Section.Category?
+    let category: ListSection.Category?
 
     init(entity: Marvel.MarvelEntity) {
         self.id = String(entity.id)
@@ -20,7 +20,7 @@ struct MarvelListCollectionModel: Hashable {
         hasher.combine(id)
     }
 
-    public static func == (lhs: MarvelListCollectionModel, rhs: MarvelListCollectionModel) -> Bool {
+    public static func == (lhs: ListCollectionModel, rhs: ListCollectionModel) -> Bool {
         lhs.id == rhs.id
     }
 }

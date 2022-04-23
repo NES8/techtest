@@ -2,15 +2,15 @@ import Foundation
 import Combine
 import Core
 
-class MarvelListPresenter {
-    private weak var ui: MarvelListUI?
+class ListPresenter {
+    private weak var ui: ListUI?
     private var cancellables = Set<AnyCancellable>()
     private let getMarvelEntities = GetMarvelEntity()
-    private var selectedCategory: Section.Category = .all
+    private var selectedCategory: ListSection.Category = .all
     private var startsWithFilter: String?
 
     init(
-        ui: MarvelListUI
+        ui: ListUI
     ) {
         self.ui = ui
     }
@@ -32,7 +32,7 @@ class MarvelListPresenter {
                     guard let self = self else { return }
                     switch completion {
                     case .finished:
-                        let viewModels = allEntities.map { MarvelListCollectionModel(entity: $0) }
+                        let viewModels = allEntities.map { ListCollectionModel(entity: $0) }
                         self.ui?.show(items: viewModels)
                     case .failure(let error):
                         self.ui?.show(error: error)
@@ -46,7 +46,7 @@ class MarvelListPresenter {
     }
 
     private func generatePublishers() -> [AnyPublisher<[Marvel.MarvelEntity], Error>] {
-        if let source = SectionCategoryMapper().map(selectedCategory),
+        if let source = ListSectionMapper().map(selectedCategory),
            selectedCategory != .all {
             return [getMarvelEntities(type: source, filter: startsWithFilter)]
         } else {
@@ -60,7 +60,7 @@ class MarvelListPresenter {
         }
     }
 
-    func didSelect(category: Section.Category) {
+    func didSelect(category: ListSection.Category) {
         selectedCategory = category
         loadData()
     }

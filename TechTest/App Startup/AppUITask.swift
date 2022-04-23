@@ -12,9 +12,9 @@ class AppUITask: NoOpAppTask {
     }
 
     var windowProvider: WindowProvider
-    @Inject private var marvelListService: MarvelListService
+    @Inject private var listService: ListService
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        windowProvider.window?.rootViewController = marvelListService.provideMarvelListViewController()
+        windowProvider.window?.rootViewController = listService.provideListViewController()
     }
 }

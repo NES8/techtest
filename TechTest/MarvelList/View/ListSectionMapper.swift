@@ -1,7 +1,7 @@
 import Core
 
-struct SectionCategoryMapper {
-    func map(_ category: Section.Category) -> Marvel.Source? {
+struct ListSectionMapper {
+    func map(_ category: ListSection.Category) -> Marvel.Source? {
         switch category {
         case .all:
             return nil

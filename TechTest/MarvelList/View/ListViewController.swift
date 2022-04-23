@@ -1,24 +1,24 @@
 import UIKit
 import Core
 
-protocol MarvelListUI: AnyObject {
+protocol ListUI: AnyObject {
     func show(error: Error)
-    func show(items: [MarvelListCollectionModel])
+    func show(items: [ListCollectionModel])
     func showEmptyCase()
 }
 
-class MarvelListViewController: UICollectionViewController {
+class ListViewController: UICollectionViewController {
 
-    private var sections = [Section]()
+    private var sections = [ListSection]()
     private lazy var dataSource = makeDataSource()
     private var searchController = UISearchController(searchResultsController: nil)
-    private let sectionMapper = SectionCategoryMapper()
+    private let sectionMapper = ListSectionMapper()
 
-    var presenter: MarvelListPresenter!
+    var presenter: ListPresenter!
 
     // MARK: - Value Types
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, MarvelListCollectionModel>
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, MarvelListCollectionModel>
+    typealias DataSource = UICollectionViewDiffableDataSource<ListSection, ListCollectionModel>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<ListSection, ListCollectionModel>
 
     // MARK: - Life Cycle
 
@@ -53,7 +53,7 @@ class MarvelListViewController: UICollectionViewController {
     @objc private func showFilterOptions() {
         let alert = UIAlertController(title: L10n.listFilterMenuTitle, message: nil, preferredStyle: .actionSheet)
 
-        Section.Category.allCases.forEach { category in
+        ListSection.Category.allCases.forEach { category in
             alert.addAction(UIAlertAction(title: category.localizedTitle, style: .default , handler: { _ in
                 self.didSelect(category: category)
             }))
@@ -66,7 +66,7 @@ class MarvelListViewController: UICollectionViewController {
         present(alert, animated: true)
     }
 
-    private func didSelect(category: Section.Category) {
+    private func didSelect(category: ListSection.Category) {
         presenter.didSelect(category: category)
     }
 
@@ -76,7 +76,7 @@ class MarvelListViewController: UICollectionViewController {
         let dataSource = DataSource(
             collectionView: collectionView,
             cellProvider: { (collectionView, indexPath, item) -> UICollectionViewCell? in
-                let cell = collectionView.dequeue(reusableItem: MarvelListCollectionViewCell.self, for: indexPath)
+                let cell = collectionView.dequeue(reusableItem: ListCollectionViewCell.self, for: indexPath)
                 cell.setup(item)
                 return cell
             })
@@ -88,8 +88,8 @@ class MarvelListViewController: UICollectionViewController {
 
             let view = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
-                withReuseIdentifier: MarvelListSectionHeaderView.reuseIdentifier,
-                for: indexPath) as? MarvelListSectionHeaderView
+                withReuseIdentifier: ListSectionHeaderView.reuseIdentifier,
+                for: indexPath) as? ListSectionHeaderView
 
             view?.titleLabel.text = section.title
             return view
@@ -110,7 +110,7 @@ class MarvelListViewController: UICollectionViewController {
 
 // MARK: - UICollectionViewDataSource
 
-extension MarvelListViewController {
+extension ListViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
         presenter.didSelectItem(id: item.id)
@@ -119,7 +119,7 @@ extension MarvelListViewController {
 
 // MARK: - UISearchResultsUpdating Delegate
 
-extension MarvelListViewController: UISearchResultsUpdating {
+extension ListViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         presenter.didChange(filter: searchController.searchBar.text)
         applySnapshot()
@@ -136,14 +136,14 @@ extension MarvelListViewController: UISearchResultsUpdating {
 
 // MARK: - Layout Handling
 
-extension MarvelListViewController {
+extension ListViewController {
     private func configureLayout() {
         collectionView.register(
-            MarvelListSectionHeaderView.self,
+            ListSectionHeaderView.self,
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-            withReuseIdentifier: MarvelListSectionHeaderView.reuseIdentifier
+            withReuseIdentifier: ListSectionHeaderView.reuseIdentifier
         )
-        collectionView.register(reusableItem: MarvelListCollectionViewCell.self)
+        collectionView.register(reusableItem: ListCollectionViewCell.self)
 
         collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
             let isPhone = layoutEnvironment.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone
@@ -180,7 +180,7 @@ extension MarvelListViewController {
     }
 }
 
-extension MarvelListViewController: MarvelListUI {
+extension ListViewController: ListUI {
 
     func show(error: Error) {
         let alert = UIAlertController(title: L10n.messageViewErrorUnknowTitle,
@@ -198,10 +198,10 @@ extension MarvelListViewController: MarvelListUI {
         present(alert, animated: true)
     }
 
-    func show(items: [MarvelListCollectionModel]) {
-        var newSections = [Section]()
+    func show(items: [ListCollectionModel]) {
+        var newSections = [ListSection]()
 
-        Section.Category.allCases.forEach { category in
+        ListSection.Category.allCases.forEach { category in
             let categoryItems = items.filter({
                 guard let itemCategory = $0.category else { return false }
                 return itemCategory == category
