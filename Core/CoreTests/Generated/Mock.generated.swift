@@ -57,129 +57,135 @@ open class APIClientMock: APIClient, Mock {
 
 
 
-    open func getCharacters(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getCharacters__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
-		let perform = methodPerformValue(.m_getCharacters__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
-		perform?(`nameStartsWith`)
+    open func getCharacters(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`)))
+		let perform = methodPerformValue(.m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))) as? (String?, Int) -> Void
+		perform?(`nameStartsWith`, `pageSize`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_getCharacters__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))).casted()
+		    __value = try methodReturnValue(.m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for getCharacters(nameStartsWith: String?). Use given")
-			Failure("Stub return value not specified for getCharacters(nameStartsWith: String?). Use given")
+			onFatalFailure("Stub return value not specified for getCharacters(nameStartsWith: String?, pageSize: Int). Use given")
+			Failure("Stub return value not specified for getCharacters(nameStartsWith: String?, pageSize: Int). Use given")
 		}
 		return __value
     }
 
-    open func getComics(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getComics__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
-		let perform = methodPerformValue(.m_getComics__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
-		perform?(`nameStartsWith`)
+    open func getComics(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`)))
+		let perform = methodPerformValue(.m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))) as? (String?, Int) -> Void
+		perform?(`nameStartsWith`, `pageSize`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_getComics__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))).casted()
+		    __value = try methodReturnValue(.m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for getComics(nameStartsWith: String?). Use given")
-			Failure("Stub return value not specified for getComics(nameStartsWith: String?). Use given")
+			onFatalFailure("Stub return value not specified for getComics(nameStartsWith: String?, pageSize: Int). Use given")
+			Failure("Stub return value not specified for getComics(nameStartsWith: String?, pageSize: Int). Use given")
 		}
 		return __value
     }
 
-    open func getCreators(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getCreators__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
-		let perform = methodPerformValue(.m_getCreators__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
-		perform?(`nameStartsWith`)
+    open func getCreators(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`)))
+		let perform = methodPerformValue(.m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))) as? (String?, Int) -> Void
+		perform?(`nameStartsWith`, `pageSize`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_getCreators__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))).casted()
+		    __value = try methodReturnValue(.m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for getCreators(nameStartsWith: String?). Use given")
-			Failure("Stub return value not specified for getCreators(nameStartsWith: String?). Use given")
+			onFatalFailure("Stub return value not specified for getCreators(nameStartsWith: String?, pageSize: Int). Use given")
+			Failure("Stub return value not specified for getCreators(nameStartsWith: String?, pageSize: Int). Use given")
 		}
 		return __value
     }
 
-    open func getEvents(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getEvents__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
-		let perform = methodPerformValue(.m_getEvents__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
-		perform?(`nameStartsWith`)
+    open func getEvents(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`)))
+		let perform = methodPerformValue(.m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))) as? (String?, Int) -> Void
+		perform?(`nameStartsWith`, `pageSize`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_getEvents__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))).casted()
+		    __value = try methodReturnValue(.m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for getEvents(nameStartsWith: String?). Use given")
-			Failure("Stub return value not specified for getEvents(nameStartsWith: String?). Use given")
+			onFatalFailure("Stub return value not specified for getEvents(nameStartsWith: String?, pageSize: Int). Use given")
+			Failure("Stub return value not specified for getEvents(nameStartsWith: String?, pageSize: Int). Use given")
 		}
 		return __value
     }
 
-    open func getSeries(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getSeries__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
-		let perform = methodPerformValue(.m_getSeries__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
-		perform?(`nameStartsWith`)
+    open func getSeries(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`)))
+		let perform = methodPerformValue(.m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))) as? (String?, Int) -> Void
+		perform?(`nameStartsWith`, `pageSize`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_getSeries__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))).casted()
+		    __value = try methodReturnValue(.m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for getSeries(nameStartsWith: String?). Use given")
-			Failure("Stub return value not specified for getSeries(nameStartsWith: String?). Use given")
+			onFatalFailure("Stub return value not specified for getSeries(nameStartsWith: String?, pageSize: Int). Use given")
+			Failure("Stub return value not specified for getSeries(nameStartsWith: String?, pageSize: Int). Use given")
 		}
 		return __value
     }
 
-    open func getStories(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_getStories__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`)))
-		let perform = methodPerformValue(.m_getStories__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))) as? (String?) -> Void
-		perform?(`nameStartsWith`)
+    open func getStories(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`)))
+		let perform = methodPerformValue(.m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))) as? (String?, Int) -> Void
+		perform?(`nameStartsWith`, `pageSize`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_getStories__nameStartsWith_nameStartsWith(Parameter<String?>.value(`nameStartsWith`))).casted()
+		    __value = try methodReturnValue(.m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>.value(`nameStartsWith`), Parameter<Int>.value(`pageSize`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for getStories(nameStartsWith: String?). Use given")
-			Failure("Stub return value not specified for getStories(nameStartsWith: String?). Use given")
+			onFatalFailure("Stub return value not specified for getStories(nameStartsWith: String?, pageSize: Int). Use given")
+			Failure("Stub return value not specified for getStories(nameStartsWith: String?, pageSize: Int). Use given")
 		}
 		return __value
     }
 
 
     fileprivate enum MethodType {
-        case m_getCharacters__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getComics__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getCreators__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getEvents__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getSeries__nameStartsWith_nameStartsWith(Parameter<String?>)
-        case m_getStories__nameStartsWith_nameStartsWith(Parameter<String?>)
+        case m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>, Parameter<Int>)
+        case m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>, Parameter<Int>)
+        case m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>, Parameter<Int>)
+        case m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>, Parameter<Int>)
+        case m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>, Parameter<Int>)
+        case m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(Parameter<String?>, Parameter<Int>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_getCharacters__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getCharacters__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
+            case (.m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(let lhsNamestartswith, let lhsPagesize), .m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(let rhsNamestartswith, let rhsPagesize)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPagesize, rhs: rhsPagesize, with: matcher), lhsPagesize, rhsPagesize, "pageSize"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_getComics__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getComics__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
+            case (.m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(let lhsNamestartswith, let lhsPagesize), .m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(let rhsNamestartswith, let rhsPagesize)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPagesize, rhs: rhsPagesize, with: matcher), lhsPagesize, rhsPagesize, "pageSize"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_getCreators__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getCreators__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
+            case (.m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(let lhsNamestartswith, let lhsPagesize), .m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(let rhsNamestartswith, let rhsPagesize)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPagesize, rhs: rhsPagesize, with: matcher), lhsPagesize, rhsPagesize, "pageSize"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_getEvents__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getEvents__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
+            case (.m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(let lhsNamestartswith, let lhsPagesize), .m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(let rhsNamestartswith, let rhsPagesize)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPagesize, rhs: rhsPagesize, with: matcher), lhsPagesize, rhsPagesize, "pageSize"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_getSeries__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getSeries__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
+            case (.m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(let lhsNamestartswith, let lhsPagesize), .m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(let rhsNamestartswith, let rhsPagesize)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPagesize, rhs: rhsPagesize, with: matcher), lhsPagesize, rhsPagesize, "pageSize"))
 				return Matcher.ComparisonResult(results)
 
-            case (.m_getStories__nameStartsWith_nameStartsWith(let lhsNamestartswith), .m_getStories__nameStartsWith_nameStartsWith(let rhsNamestartswith)):
+            case (.m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(let lhsNamestartswith, let lhsPagesize), .m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(let rhsNamestartswith, let rhsPagesize)):
 				var results: [Matcher.ParameterComparisonResult] = []
 				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsNamestartswith, rhs: rhsNamestartswith, with: matcher), lhsNamestartswith, rhsNamestartswith, "nameStartsWith"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsPagesize, rhs: rhsPagesize, with: matcher), lhsPagesize, rhsPagesize, "pageSize"))
 				return Matcher.ComparisonResult(results)
             default: return .none
             }
@@ -187,22 +193,22 @@ open class APIClientMock: APIClient, Mock {
 
         func intValue() -> Int {
             switch self {
-            case let .m_getCharacters__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case let .m_getComics__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case let .m_getCreators__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case let .m_getEvents__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case let .m_getSeries__nameStartsWith_nameStartsWith(p0): return p0.intValue
-            case let .m_getStories__nameStartsWith_nameStartsWith(p0): return p0.intValue
+            case let .m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(p0, p1): return p0.intValue + p1.intValue
+            case let .m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(p0, p1): return p0.intValue + p1.intValue
+            case let .m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(p0, p1): return p0.intValue + p1.intValue
+            case let .m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(p0, p1): return p0.intValue + p1.intValue
+            case let .m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(p0, p1): return p0.intValue + p1.intValue
+            case let .m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(p0, p1): return p0.intValue + p1.intValue
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_getCharacters__nameStartsWith_nameStartsWith: return ".getCharacters(nameStartsWith:)"
-            case .m_getComics__nameStartsWith_nameStartsWith: return ".getComics(nameStartsWith:)"
-            case .m_getCreators__nameStartsWith_nameStartsWith: return ".getCreators(nameStartsWith:)"
-            case .m_getEvents__nameStartsWith_nameStartsWith: return ".getEvents(nameStartsWith:)"
-            case .m_getSeries__nameStartsWith_nameStartsWith: return ".getSeries(nameStartsWith:)"
-            case .m_getStories__nameStartsWith_nameStartsWith: return ".getStories(nameStartsWith:)"
+            case .m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize: return ".getCharacters(nameStartsWith:pageSize:)"
+            case .m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize: return ".getComics(nameStartsWith:pageSize:)"
+            case .m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize: return ".getCreators(nameStartsWith:pageSize:)"
+            case .m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize: return ".getEvents(nameStartsWith:pageSize:)"
+            case .m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize: return ".getSeries(nameStartsWith:pageSize:)"
+            case .m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize: return ".getStories(nameStartsWith:pageSize:)"
             }
         }
     }
@@ -216,62 +222,62 @@ open class APIClientMock: APIClient, Mock {
         }
 
 
-        public static func getCharacters(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func getCharacters(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getComics(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getComics__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func getComics(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getCreators(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func getCreators(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getEvents(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getEvents__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func getEvents(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getSeries(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func getSeries(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getStories(nameStartsWith: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_getStories__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func getStories(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func getCharacters(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func getCharacters(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
         }
-        public static func getComics(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func getComics(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getComics__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
         }
-        public static func getCreators(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func getCreators(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
         }
-        public static func getEvents(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func getEvents(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getEvents__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
         }
-        public static func getSeries(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func getSeries(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
         }
-        public static func getStories(nameStartsWith: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func getStories(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_getStories__nameStartsWith_nameStartsWith(`nameStartsWith`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
@@ -281,35 +287,35 @@ open class APIClientMock: APIClient, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func getCharacters(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getComics(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getComics__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getCreators(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getEvents(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getEvents__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getSeries(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`))}
-        public static func getStories(nameStartsWith: Parameter<String?>) -> Verify { return Verify(method: .m_getStories__nameStartsWith_nameStartsWith(`nameStartsWith`))}
+        public static func getCharacters(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>) -> Verify { return Verify(method: .m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`))}
+        public static func getComics(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>) -> Verify { return Verify(method: .m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`))}
+        public static func getCreators(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>) -> Verify { return Verify(method: .m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`))}
+        public static func getEvents(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>) -> Verify { return Verify(method: .m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`))}
+        public static func getSeries(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>) -> Verify { return Verify(method: .m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`))}
+        public static func getStories(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>) -> Verify { return Verify(method: .m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`))}
     }
 
     public struct Perform {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func getCharacters(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
-            return Perform(method: .m_getCharacters__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
+        public static func getCharacters(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, perform: @escaping (String?, Int) -> Void) -> Perform {
+            return Perform(method: .m_getCharacters__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), performs: perform)
         }
-        public static func getComics(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
-            return Perform(method: .m_getComics__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
+        public static func getComics(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, perform: @escaping (String?, Int) -> Void) -> Perform {
+            return Perform(method: .m_getComics__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), performs: perform)
         }
-        public static func getCreators(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
-            return Perform(method: .m_getCreators__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
+        public static func getCreators(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, perform: @escaping (String?, Int) -> Void) -> Perform {
+            return Perform(method: .m_getCreators__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), performs: perform)
         }
-        public static func getEvents(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
-            return Perform(method: .m_getEvents__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
+        public static func getEvents(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, perform: @escaping (String?, Int) -> Void) -> Perform {
+            return Perform(method: .m_getEvents__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), performs: perform)
         }
-        public static func getSeries(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
-            return Perform(method: .m_getSeries__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
+        public static func getSeries(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, perform: @escaping (String?, Int) -> Void) -> Perform {
+            return Perform(method: .m_getSeries__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), performs: perform)
         }
-        public static func getStories(nameStartsWith: Parameter<String?>, perform: @escaping (String?) -> Void) -> Perform {
-            return Perform(method: .m_getStories__nameStartsWith_nameStartsWith(`nameStartsWith`), performs: perform)
+        public static func getStories(nameStartsWith: Parameter<String?>, pageSize: Parameter<Int>, perform: @escaping (String?, Int) -> Void) -> Perform {
+            return Perform(method: .m_getStories__nameStartsWith_nameStartsWithpageSize_pageSize(`nameStartsWith`, `pageSize`), performs: perform)
         }
     }
 
@@ -430,42 +436,41 @@ open class GetMarvelEntityUseCaseMock: GetMarvelEntityUseCase, Mock {
 
 
 
-    open func callAsFunction(type: Marvel.Source, filter: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        addInvocation(.m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>.value(`type`), Parameter<String?>.value(`filter`)))
-		let perform = methodPerformValue(.m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>.value(`type`), Parameter<String?>.value(`filter`))) as? (Marvel.Source, String?) -> Void
-		perform?(`type`, `filter`)
+    open func callAsFunction(_ searchQuery: SearchQuery) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        addInvocation(.m_callAsFunction__searchQuery(Parameter<SearchQuery>.value(`searchQuery`)))
+		let perform = methodPerformValue(.m_callAsFunction__searchQuery(Parameter<SearchQuery>.value(`searchQuery`))) as? (SearchQuery) -> Void
+		perform?(`searchQuery`)
 		var __value: AnyPublisher<[Marvel.MarvelEntity], Error>
 		do {
-		    __value = try methodReturnValue(.m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>.value(`type`), Parameter<String?>.value(`filter`))).casted()
+		    __value = try methodReturnValue(.m_callAsFunction__searchQuery(Parameter<SearchQuery>.value(`searchQuery`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for callAsFunction(type: Marvel.Source, filter: String?). Use given")
-			Failure("Stub return value not specified for callAsFunction(type: Marvel.Source, filter: String?). Use given")
+			onFatalFailure("Stub return value not specified for callAsFunction(_ searchQuery: SearchQuery). Use given")
+			Failure("Stub return value not specified for callAsFunction(_ searchQuery: SearchQuery). Use given")
 		}
 		return __value
     }
 
 
     fileprivate enum MethodType {
-        case m_callAsFunction__type_typefilter_filter(Parameter<Marvel.Source>, Parameter<String?>)
+        case m_callAsFunction__searchQuery(Parameter<SearchQuery>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_callAsFunction__type_typefilter_filter(let lhsType, let lhsFilter), .m_callAsFunction__type_typefilter_filter(let rhsType, let rhsFilter)):
+            case (.m_callAsFunction__searchQuery(let lhsSearchquery), .m_callAsFunction__searchQuery(let rhsSearchquery)):
 				var results: [Matcher.ParameterComparisonResult] = []
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsType, rhs: rhsType, with: matcher), lhsType, rhsType, "type"))
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsFilter, rhs: rhsFilter, with: matcher), lhsFilter, rhsFilter, "filter"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsSearchquery, rhs: rhsSearchquery, with: matcher), lhsSearchquery, rhsSearchquery, "_ searchQuery"))
 				return Matcher.ComparisonResult(results)
             }
         }
 
         func intValue() -> Int {
             switch self {
-            case let .m_callAsFunction__type_typefilter_filter(p0, p1): return p0.intValue + p1.intValue
+            case let .m_callAsFunction__searchQuery(p0): return p0.intValue
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_callAsFunction__type_typefilter_filter: return ".callAsFunction(type:filter:)"
+            case .m_callAsFunction__searchQuery: return ".callAsFunction(_:)"
             }
         }
     }
@@ -479,12 +484,12 @@ open class GetMarvelEntityUseCaseMock: GetMarvelEntityUseCase, Mock {
         }
 
 
-        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
-            return Given(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func callAsFunction(_ searchQuery: Parameter<SearchQuery>, willReturn: AnyPublisher<[Marvel.MarvelEntity], Error>...) -> MethodStub {
+            return Given(method: .m_callAsFunction__searchQuery(`searchQuery`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
+        public static func callAsFunction(_ searchQuery: Parameter<SearchQuery>, willProduce: (Stubber<AnyPublisher<[Marvel.MarvelEntity], Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<[Marvel.MarvelEntity], Error>] = []
-			let given: Given = { return Given(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_callAsFunction__searchQuery(`searchQuery`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<[Marvel.MarvelEntity], Error>).self)
 			willProduce(stubber)
 			return given
@@ -494,15 +499,15 @@ open class GetMarvelEntityUseCaseMock: GetMarvelEntityUseCase, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>) -> Verify { return Verify(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`))}
+        public static func callAsFunction(_ searchQuery: Parameter<SearchQuery>) -> Verify { return Verify(method: .m_callAsFunction__searchQuery(`searchQuery`))}
     }
 
     public struct Perform {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func callAsFunction(type: Parameter<Marvel.Source>, filter: Parameter<String?>, perform: @escaping (Marvel.Source, String?) -> Void) -> Perform {
-            return Perform(method: .m_callAsFunction__type_typefilter_filter(`type`, `filter`), performs: perform)
+        public static func callAsFunction(_ searchQuery: Parameter<SearchQuery>, perform: @escaping (SearchQuery) -> Void) -> Perform {
+            return Perform(method: .m_callAsFunction__searchQuery(`searchQuery`), performs: perform)
         }
     }
 

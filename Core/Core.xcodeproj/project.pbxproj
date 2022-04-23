@@ -15,6 +15,7 @@
 		250DDA9E28019A1000611B48 /* Dispatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDA9728019A0F00611B48 /* Dispatching.swift */; };
 		250DDA9F28019A1000611B48 /* CoreServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDA9328019A0F00611B48 /* CoreServiceLocator.swift */; };
 		250DDACE2801E61E00611B48 /* Mock.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250DDAC72801E29900611B48 /* Mock.generated.swift */; };
+		254887A22813F0A20010026C /* SearchQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254887A12813F0A20010026C /* SearchQuery.swift */; };
 		25D0DDED2801954A00AC7D67 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0DDE42801954900AC7D67 /* Core.framework */; };
 		25D0DDF22801954A00AC7D67 /* GetMarvelEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0DDF12801954A00AC7D67 /* GetMarvelEntityTests.swift */; };
 		25D0DDF32801954A00AC7D67 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 25D0DDE72801954900AC7D67 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -54,6 +55,7 @@
 		250DDA9728019A0F00611B48 /* Dispatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatching.swift; sourceTree = "<group>"; };
 		250DDA9828019A0F00611B48 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		250DDAC72801E29900611B48 /* Mock.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mock.generated.swift; sourceTree = "<group>"; };
+		254887A12813F0A20010026C /* SearchQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchQuery.swift; sourceTree = "<group>"; };
 		25D0DDE42801954900AC7D67 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D0DDE72801954900AC7D67 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		25D0DDEC2801954A00AC7D67 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +188,7 @@
 		25D0DE0A2801955300AC7D67 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				254887A12813F0A20010026C /* SearchQuery.swift */,
 				25D0DDFC2801955300AC7D67 /* GetMarvelEntityUseCase.swift */,
 				25D0DDFD2801955300AC7D67 /* MarvelEntities.swift */,
 				25D0DDFE2801955300AC7D67 /* DomainServices.swift */,
@@ -403,6 +406,7 @@
 				25D0DE0F2801969700AC7D67 /* DomainServices.swift in Sources */,
 				25D0DE172801969F00AC7D67 /* MarvelApiDTO+Creators.swift in Sources */,
 				250DDA9E28019A1000611B48 /* Dispatching.swift in Sources */,
+				254887A22813F0A20010026C /* SearchQuery.swift in Sources */,
 				25D0DE162801969F00AC7D67 /* MarvelApiDTO+Comics.swift in Sources */,
 				250DDA9A28019A1000611B48 /* AppTask.swift in Sources */,
 				25D0DE182801969F00AC7D67 /* MarvelApiDTO+Character.swift in Sources */,
