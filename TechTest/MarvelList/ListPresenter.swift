@@ -48,16 +48,26 @@ class ListPresenter {
     private func generatePublishers() -> [AnyPublisher<[Marvel.MarvelEntity], Error>] {
         if let source = ListSectionMapper().map(selectedCategory),
            selectedCategory != .all {
-            return [getMarvelEntities(type: source, filter: startsWithFilter)]
+            return [
+                getMarvelEntities(generateSearchQuery(type: source, pageSize: .big))
+            ]
         } else {
             return [
-                getMarvelEntities(type: .characters, filter: startsWithFilter),
-                getMarvelEntities(type: .comics, filter: startsWithFilter),
-                getMarvelEntities(type: .creators, filter: startsWithFilter),
-                getMarvelEntities(type: .events, filter: startsWithFilter),
-                getMarvelEntities(type: .series, filter: startsWithFilter),
+                getMarvelEntities(generateSearchQuery(type: .characters, pageSize: .small)),
+                getMarvelEntities(generateSearchQuery(type: .comics, pageSize: .small)),
+                getMarvelEntities(generateSearchQuery(type: .creators, pageSize: .small)),
+                getMarvelEntities(generateSearchQuery(type: .events, pageSize: .small)),
+                getMarvelEntities(generateSearchQuery(type: .series, pageSize: .small)),
             ]
         }
+    }
+
+    private func generateSearchQuery(type: Marvel.Source, pageSize: SearchQuery.PageSize) -> SearchQuery {
+        SearchQuery(
+            type: type,
+            filter: startsWithFilter,
+            pageSize: pageSize
+        )
     }
 
     func didSelect(category: ListSection.Category) {
