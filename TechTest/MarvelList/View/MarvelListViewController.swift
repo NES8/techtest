@@ -46,7 +46,6 @@ class MarvelListViewController: UICollectionViewController {
 
     private func configureAccessibilityIdentifiers() {
         collectionView.accessibilityIdentifier = A21r.List.collectionView.rawValue
-
     }
 
     // MARK: Filter
