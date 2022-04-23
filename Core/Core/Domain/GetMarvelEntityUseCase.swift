@@ -3,7 +3,7 @@ import Combine
 
 // sourcery: AutoMockable
 public protocol GetMarvelEntityUseCase {
-    func callAsFunction(type: Marvel.Source, filter: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error>
+    func callAsFunction(_ searchQuery: SearchQuery) -> AnyPublisher<[Marvel.MarvelEntity], Error>
 }
 
 public class GetMarvelEntity: GetMarvelEntityUseCase {
@@ -11,20 +11,23 @@ public class GetMarvelEntity: GetMarvelEntityUseCase {
 
     public init() {}
 
-    public func callAsFunction(type: Marvel.Source, filter: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        switch type {
+    public func callAsFunction(_ searchQuery: SearchQuery) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        let pageSize = searchQuery.pageSize.rawValue
+        let filter = searchQuery.filter
+
+        switch searchQuery.type {
         case .characters:
-            return apiClient.getCharacters(nameStartsWith: filter)
+            return apiClient.getCharacters(nameStartsWith: filter, pageSize: pageSize)
         case .comics:
-            return apiClient.getComics(nameStartsWith: filter)
+            return apiClient.getComics(nameStartsWith: filter, pageSize: pageSize)
         case .creators:
-            return apiClient.getCreators(nameStartsWith: filter)
+            return apiClient.getCreators(nameStartsWith: filter, pageSize: pageSize)
         case .events:
-            return apiClient.getEvents(nameStartsWith: filter)
+            return apiClient.getEvents(nameStartsWith: filter, pageSize: pageSize)
         case .series:
-            return apiClient.getSeries(nameStartsWith: filter)
+            return apiClient.getSeries(nameStartsWith: filter, pageSize: pageSize)
         case .stories:
-            return apiClient.getStories(nameStartsWith: filter)
+            return apiClient.getStories(nameStartsWith: filter, pageSize: pageSize)
         }
     }
 }

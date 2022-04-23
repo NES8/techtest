@@ -13,10 +13,6 @@ class MarvelAPIClient: APIClient {
 
     // MARK: - Constants
 
-    private struct Constants {
-        static let limit = 3
-    }
-
     enum Endpoint: String {
         case characters
         case comics
@@ -46,28 +42,28 @@ class MarvelAPIClient: APIClient {
 
     // MARK: - Get
 
-    func getCharacters(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        getMarvelEntity(endpoint: .characters, responseType: MarvelApiDTO.Character.Result.self, filterStartsWith: nameStartsWith)
+    func getCharacters(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .characters, responseType: MarvelApiDTO.Character.Result.self, filterStartsWith: nameStartsWith, pageSize: pageSize)
     }
 
-    func getComics(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        getMarvelEntity(endpoint: .comics, responseType: MarvelApiDTO.Comics.Result.self, filterStartsWith: nameStartsWith)
+    func getComics(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .comics, responseType: MarvelApiDTO.Comics.Result.self, filterStartsWith: nameStartsWith, pageSize: pageSize)
     }
 
-    func getCreators(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        getMarvelEntity(endpoint: .creators, responseType: MarvelApiDTO.Creators.Result.self, filterStartsWith: nameStartsWith)
+    func getCreators(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .creators, responseType: MarvelApiDTO.Creators.Result.self, filterStartsWith: nameStartsWith, pageSize: pageSize)
     }
 
-    func getEvents(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        getMarvelEntity(endpoint: .events, responseType: MarvelApiDTO.Events.Result.self, filterStartsWith: nameStartsWith)
+    func getEvents(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .events, responseType: MarvelApiDTO.Events.Result.self, filterStartsWith: nameStartsWith, pageSize: pageSize)
     }
 
-    func getSeries(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        getMarvelEntity(endpoint: .series, responseType: MarvelApiDTO.Series.Result.self, filterStartsWith: nameStartsWith)
+    func getSeries(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .series, responseType: MarvelApiDTO.Series.Result.self, filterStartsWith: nameStartsWith, pageSize: pageSize)
     }
 
-    func getStories(nameStartsWith: String?) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
-        getMarvelEntity(endpoint: .stories, responseType: MarvelApiDTO.Stories.Result.self, filterStartsWith: nameStartsWith)
+    func getStories(nameStartsWith: String?, pageSize: Int) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
+        getMarvelEntity(endpoint: .stories, responseType: MarvelApiDTO.Stories.Result.self, filterStartsWith: nameStartsWith, pageSize: pageSize)
     }
 
     // MARK: Get private
@@ -75,11 +71,12 @@ class MarvelAPIClient: APIClient {
     private func getMarvelEntity<T: Decodable & MarvelApiDomainEntity>(
         endpoint: Endpoint,
         responseType: T.Type,
-        filterStartsWith: String?
+        filterStartsWith: String?,
+        pageSize limit: Int
     ) -> AnyPublisher<[Marvel.MarvelEntity], Error> {
 
         var authParams: [String: Any] = [
-            "limit": Constants.limit
+            "limit": limit
         ]
         if let filter = filterStartsWith, !filter.isEmpty {
             authParams[endpoint.startsWithKeyParameter] = filter
