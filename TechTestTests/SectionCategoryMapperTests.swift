@@ -6,12 +6,12 @@ import Nimble
 
 class SectionCategoryMapperTests: XCTestCase {
 
-    var sut: SectionCategoryMapper!
+    var sut: ListSectionMapper!
 
     override func setUp() {
         super.setUp()
 
-        sut = SectionCategoryMapper()
+        sut = ListSectionMapper()
     }
 
     override func tearDown() {

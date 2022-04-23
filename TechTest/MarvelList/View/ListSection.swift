@@ -1,6 +1,6 @@
 import Core
 
-class Section: Hashable {
+class ListSection: Hashable {
     enum Category: CaseIterable {
         case all
         case characters
@@ -46,9 +46,9 @@ class Section: Hashable {
 
     let id: String
     let title: String
-    let models: [MarvelListCollectionModel]
+    let models: [ListCollectionModel]
 
-    init(category: Category, models: [MarvelListCollectionModel]) {
+    init(category: Category, models: [ListCollectionModel]) {
         self.id = String(category.hashValue)
         self.title = category.localizedTitle
         self.models = models
@@ -58,7 +58,7 @@ class Section: Hashable {
         hasher.combine(id)
     }
 
-    static func == (lhs: Section, rhs: Section) -> Bool {
+    static func == (lhs: ListSection, rhs: ListSection) -> Bool {
         lhs.id == rhs.id
     }
 }

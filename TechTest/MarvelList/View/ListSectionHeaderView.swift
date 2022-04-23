@@ -1,8 +1,8 @@
 import UIKit
 
-class MarvelListSectionHeaderView: UICollectionReusableView {
+class ListSectionHeaderView: UICollectionReusableView {
     static var reuseIdentifier: String {
-        return String(describing: MarvelListSectionHeaderView.self)
+        return String(describing: ListSectionHeaderView.self)
     }
 
     lazy var titleLabel: UILabel = {

@@ -1,7 +1,7 @@
 import UIKit
 import SDWebImage
 
-class MarvelListCollectionViewCell: UICollectionViewCell {
+class ListCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var pictureImageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
@@ -31,7 +31,7 @@ class MarvelListCollectionViewCell: UICollectionViewCell {
         pictureImageView.layer.cornerRadius = padding
     }
 
-    func setup(_ viewModel: MarvelListCollectionModel) {
+    func setup(_ viewModel: ListCollectionModel) {
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
 
