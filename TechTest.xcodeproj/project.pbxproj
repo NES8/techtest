@@ -11,6 +11,14 @@
 		253842AF27FB8518005AFD1D /* AppUITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253842AE27FB8518005AFD1D /* AppUITask.swift */; };
 		253842B327FB86CF005AFD1D /* WindowSetupTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 253842B227FB86CF005AFD1D /* WindowSetupTask.swift */; };
 		254887A4281405D20010026C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 254887A3281405D20010026C /* README.md */; };
+		254887A6281447A10010026C /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254887A5281447A10010026C /* DetailPresenter.swift */; };
+		254887A8281447B20010026C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254887A7281447B20010026C /* DetailViewController.swift */; };
+		254887AB2814485C0010026C /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 254887AA2814485C0010026C /* Detail.storyboard */; };
+		2548893328144EF00010026C /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548893228144EF00010026C /* BaseRouter.swift */; };
+		2548893528144FD80010026C /* UIViewController+TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548893428144FD80010026C /* UIViewController+TopVC.swift */; };
+		25488937281451770010026C /* ListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25488936281451770010026C /* ListRouter.swift */; };
+		25488939281454120010026C /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25488938281454120010026C /* DetailService.swift */; };
+		2548893D28145D230010026C /* DetailServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548893C28145D230010026C /* DetailServiceProvider.swift */; };
 		254C218327F85752005F900F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254C218227F85752005F900F /* AppDelegate.swift */; };
 		254C218527F85752005F900F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254C218427F85752005F900F /* SceneDelegate.swift */; };
 		254C218727F85752005F900F /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254C218627F85752005F900F /* ListViewController.swift */; };
@@ -102,6 +110,14 @@
 		253842AE27FB8518005AFD1D /* AppUITask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUITask.swift; sourceTree = "<group>"; };
 		253842B227FB86CF005AFD1D /* WindowSetupTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSetupTask.swift; sourceTree = "<group>"; };
 		254887A3281405D20010026C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		254887A5281447A10010026C /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		254887A7281447B20010026C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		254887AA2814485C0010026C /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		2548893228144EF00010026C /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		2548893428144FD80010026C /* UIViewController+TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+TopVC.swift"; sourceTree = "<group>"; };
+		25488936281451770010026C /* ListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouter.swift; sourceTree = "<group>"; };
+		25488938281454120010026C /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
+		2548893C28145D230010026C /* DetailServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailServiceProvider.swift; sourceTree = "<group>"; };
 		254C217F27F85752005F900F /* TechTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		254C218227F85752005F900F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		254C218427F85752005F900F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -206,6 +222,18 @@
 			path = "App Startup";
 			sourceTree = "<group>";
 		};
+		254887A9281447B90010026C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				254887AA2814485C0010026C /* Detail.storyboard */,
+				254887A7281447B20010026C /* DetailViewController.swift */,
+				254887A5281447A10010026C /* DetailPresenter.swift */,
+				2548893C28145D230010026C /* DetailServiceProvider.swift */,
+				25488938281454120010026C /* DetailService.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		254C217627F85752005F900F = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +262,7 @@
 				254887A3281405D20010026C /* README.md */,
 				253842AB27FB84AD005AFD1D /* App Startup */,
 				25FDDF1D2802F8D000DB0C48 /* List */,
+				254887A9281447B90010026C /* Detail */,
 				25FDDF2C280332DC00DB0C48 /* Extensions */,
 				25FDDF2A2803010F00DB0C48 /* MessageView */,
 				25FDDF0A2802E4B600DB0C48 /* LoadingView */,
@@ -284,6 +313,7 @@
 			children = (
 				25FDDD972802DE3800DB0C48 /* BaseViewController.swift */,
 				25FDDD992802DF6A00DB0C48 /* BasePresenter.swift */,
+				2548893228144EF00010026C /* BaseRouter.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -326,6 +356,7 @@
 				254C232827F8A6B4005F900F /* ListPresenter.swift */,
 				25FDDF1E2802F8EC00DB0C48 /* ListServiceProvider.swift */,
 				25FDDF202802F96700DB0C48 /* ListService.swift */,
+				25488936281451770010026C /* ListRouter.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -345,8 +376,9 @@
 			children = (
 				25FDDF32280336C500DB0C48 /* UICollectionView+ReusableItem.swift */,
 				25D52224280C26B100CAF805 /* UIDevice.swift */,
-				25FDDF1B2802F4E800DB0C48 /* UIView+Load.swift */,
 				25FDDF222802FA2000DB0C48 /* UIStoryboard+instantiate.swift */,
+				25FDDF1B2802F4E800DB0C48 /* UIView+Load.swift */,
+				2548893428144FD80010026C /* UIViewController+TopVC.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +548,7 @@
 				254C218F27F85753005F900F /* LaunchScreen.storyboard in Resources */,
 				254887A4281405D20010026C /* README.md in Resources */,
 				254C218C27F85753005F900F /* Assets.xcassets in Resources */,
+				254887AB2814485C0010026C /* Detail.storyboard in Resources */,
 				254C218A27F85752005F900F /* Main.storyboard in Resources */,
 				25FDDF142802EF9800DB0C48 /* Localizable.strings in Resources */,
 				25FDDF0C2802E87700DB0C48 /* Images.xcassets in Resources */,
@@ -698,7 +731,11 @@
 				25FDDF352803374A00DB0C48 /* ListCollectionModel.swift in Sources */,
 				254C218727F85752005F900F /* ListViewController.swift in Sources */,
 				25FDDF092802E4B200DB0C48 /* LoadingView.swift in Sources */,
+				25488937281451770010026C /* ListRouter.swift in Sources */,
+				25488939281454120010026C /* DetailService.swift in Sources */,
+				2548893528144FD80010026C /* UIViewController+TopVC.swift in Sources */,
 				25FDDF0F2802E8F800DB0C48 /* assets-images.swift in Sources */,
+				254887A8281447B20010026C /* DetailViewController.swift in Sources */,
 				254C218327F85752005F900F /* AppDelegate.swift in Sources */,
 				254C218527F85752005F900F /* SceneDelegate.swift in Sources */,
 				253842B327FB86CF005AFD1D /* WindowSetupTask.swift in Sources */,
@@ -709,8 +746,11 @@
 				25D5209D280C155C00CAF805 /* ListSectionMapper.swift in Sources */,
 				25FDDF1F2802F8EC00DB0C48 /* ListServiceProvider.swift in Sources */,
 				25FDDF282803010A00DB0C48 /* MessageView.swift in Sources */,
+				254887A6281447A10010026C /* DetailPresenter.swift in Sources */,
 				25FDDF192802F02600DB0C48 /* Strings.swift in Sources */,
+				2548893328144EF00010026C /* BaseRouter.swift in Sources */,
 				25D5209B2809984000CAF805 /* ListSectionHeaderView.swift in Sources */,
+				2548893D28145D230010026C /* DetailServiceProvider.swift in Sources */,
 				253842AD27FB84C6005AFD1D /* AppServiceProvider.swift in Sources */,
 				25FDDF212802F96700DB0C48 /* ListService.swift in Sources */,
 				25FDDF232802FA2000DB0C48 /* UIStoryboard+instantiate.swift in Sources */,

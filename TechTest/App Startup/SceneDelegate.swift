@@ -9,7 +9,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WindowProvider {
         AdditionsServices(),
         DomainService(),
         AppServiceProvider(windowProvider: self),
-        ListServiceProvider()
+        ListServiceProvider(),
+        DetailServiceProvider(),
     ]
 
     lazy var tasks = AppTasks.build(serviceProviders: services, finished: {

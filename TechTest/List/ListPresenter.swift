@@ -5,14 +5,19 @@ import Core
 class ListPresenter {
     private weak var ui: ListUI?
     private var cancellables = Set<AnyCancellable>()
-    private let getMarvelEntities = GetMarvelEntity()
     private var selectedCategory: ListSection.Category = .all
     private var startsWithFilter: String?
+    private let router: ListRoutable
+
+    @Inject var getMarvelEntities: GetMarvelEntityUseCase
+
 
     init(
-        ui: ListUI
+        ui: ListUI,
+        router: ListRoutable
     ) {
         self.ui = ui
+        self.router = router
     }
 
     func viewDidLoad() {
@@ -81,6 +86,6 @@ class ListPresenter {
     }
 
     func didSelectItem(id: String) {
-        #warning("TODO")
+        router.openDetail(id: id)
     }
 }
