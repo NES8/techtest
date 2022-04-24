@@ -3,16 +3,19 @@ import Foundation
 public struct DomainService: ServiceProvider {
 
     public var appTasks = [AppTask]()
-    let path: String
+
+    private let apiClient: MarvelAPIClient
 
     public init(path: String = "https://gateway.marvel.com") {
-        self.path = path
+        self.apiClient = MarvelAPIClient(baseUrl: path)
     }
 
     public func modules() -> [Register] {
         [
-            Register(APIClient.self) { MarvelAPIClient(baseUrl: path) },
-            Register(GetMarvelEntityUseCase.self) { GetMarvelEntity() },
+            Register(SearchAPIClient.self) { self.apiClient },
+            Register(DetailAPIClient.self) { self.apiClient },
+            Register(GetSearchUseCase.self) { GetSearch() },
+            Register(GetDetailUseCase.self) { GetDetail() },
         ]
     }
 }

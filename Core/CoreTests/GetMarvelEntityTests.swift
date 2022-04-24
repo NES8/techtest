@@ -9,7 +9,7 @@ import TestFoundation
 class GetMarvelEntityTests: XCTestCase {
 
     var mockApiClient: APIClientMock!
-    var getMarvelEntity: GetMarvelEntityUseCase!
+    var getMarvelEntity: GetSearchUseCase!
     let anyMarvelEntity = Marvel.MarvelEntity(id: 1, name: "name", description: "description", source: .characters, thumbnailURL: nil)
 
     override func setUp() {
@@ -17,10 +17,10 @@ class GetMarvelEntityTests: XCTestCase {
         mockApiClient = APIClientMock()
 
         CoreServiceLocator.shared.add {
-            Register(APIClient.self) { self.mockApiClient }
+            Register(SearchAPIClient.self) { self.mockApiClient }
         }
 
-        getMarvelEntity = GetMarvelEntity()
+        getMarvelEntity = GetSearch()
     }
 
     override func tearDown() {

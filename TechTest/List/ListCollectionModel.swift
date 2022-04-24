@@ -2,25 +2,26 @@ import Foundation
 import Core
 
 struct ListCollectionModel: Hashable {
-    let id: String
+    let itemId: ItemId
     let title: String
     let description: String?
     let pictureURL: URL?
     let category: ListSection.Category?
 
     init(entity: Marvel.MarvelEntity) {
-        self.id = String(entity.id)
+        self.itemId = .init(id: String(entity.id),
+                            source: entity.source)
         self.title = entity.name
         self.description = entity.description
         self.pictureURL = entity.thumbnailURL
         self.category = .init(source: entity.source)
     }
 
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(itemId)
     }
 
-    public static func == (lhs: ListCollectionModel, rhs: ListCollectionModel) -> Bool {
-        lhs.id == rhs.id
+    static func == (lhs: ListCollectionModel, rhs: ListCollectionModel) -> Bool {
+        lhs.itemId == rhs.itemId
     }
 }

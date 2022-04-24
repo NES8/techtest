@@ -10,7 +10,7 @@ public enum Marvel {
         case stories
     }
 
-    public struct MarvelEntity: Equatable {
+    public struct MarvelEntity {
         public let id: Int
         public let name: String
         public let description: String?

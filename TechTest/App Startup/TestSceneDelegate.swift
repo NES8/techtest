@@ -11,7 +11,8 @@ class TestSceneDelegate: UIResponder, UIWindowSceneDelegate, WindowProvider {
         AdditionsServices(),
         DomainService(path: "http://localhost:6789"),
         AppServiceProvider(windowProvider: self),
-        ListServiceProvider()
+        ListServiceProvider(),
+        DetailServiceProvider()
     ]
 
     lazy var tasks = AppTasks.build(serviceProviders: services, finished: {

@@ -2,12 +2,12 @@ import Foundation
 import Combine
 
 // sourcery: AutoMockable
-public protocol GetMarvelEntityUseCase {
+public protocol GetSearchUseCase {
     func callAsFunction(_ searchQuery: SearchQuery) -> AnyPublisher<[Marvel.MarvelEntity], Error>
 }
 
-public class GetMarvelEntity: GetMarvelEntityUseCase {
-    @Inject private var apiClient: APIClient
+public class GetSearch: GetSearchUseCase {
+    @Inject private var apiClient: SearchAPIClient
 
     public init() {}
 
