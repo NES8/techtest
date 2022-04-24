@@ -94,7 +94,7 @@ class BaseViewController: UIViewController, BaseUI {
 
     // MARK: Spinner
 
-    var vSpinner : UIView?
+    var vSpinner: UIView?
 
     func showLoading() {
         showSpinner(onView: self.view)
