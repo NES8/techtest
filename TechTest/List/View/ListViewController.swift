@@ -112,7 +112,7 @@ class ListViewController: UICollectionViewController {
 extension ListViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
-        presenter.didSelectItem(id: item.id)
+        presenter.didSelectItem(itemId: item.itemId)
     }
 }
 

@@ -1,16 +1,17 @@
 import Foundation
-import SwiftUI
+import UIKit
+import Core
 
 public protocol DetailService {
-    func provideDetailViewController(id: String) -> UIViewController
+    func provideDetailViewController(itemId: ItemId) -> UIViewController
 }
 
 struct DetailServiceLocator: DetailService {
 
-    func provideDetailViewController(id: String) -> UIViewController {
+    func provideDetailViewController(itemId: ItemId) -> UIViewController {
         let viewController = UIStoryboard(name: "Detail").instantiateRootViewController() as DetailViewController
         viewController.presenter = DetailPresenter(
-            id: id,
+            itemId: itemId,
             ui: viewController
         )
         return viewController

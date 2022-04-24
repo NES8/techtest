@@ -48,7 +48,7 @@ extension MarvelApiDTO.Comics {
     }
 }
 
-extension MarvelApiDTO.Comics.Result: MarvelApiDomainEntity {
+extension MarvelApiDTO.Comics.Result: MarvelAPIDomainEntity {
     var domainEntity: Marvel.MarvelEntity {
         let thumbnailUrl: URL? = {
             guard let path = thumbnail?.path, let ext = thumbnail?.thumbnailExtension else { return nil }

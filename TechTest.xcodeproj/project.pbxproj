@@ -354,6 +354,7 @@
 			children = (
 				25FDDF2D2803340E00DB0C48 /* View */,
 				254C232827F8A6B4005F900F /* ListPresenter.swift */,
+				25FDDF342803374A00DB0C48 /* ListCollectionModel.swift */,
 				25FDDF1E2802F8EC00DB0C48 /* ListServiceProvider.swift */,
 				25FDDF202802F96700DB0C48 /* ListService.swift */,
 				25488936281451770010026C /* ListRouter.swift */,
@@ -401,7 +402,6 @@
 			children = (
 				25FDDF2E2803353900DB0C48 /* ListCollectionViewCell.xib */,
 				25FDDF302803368600DB0C48 /* ListCollectionViewCell.swift */,
-				25FDDF342803374A00DB0C48 /* ListCollectionModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";

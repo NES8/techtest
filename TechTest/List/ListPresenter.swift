@@ -9,7 +9,7 @@ class ListPresenter {
     private var startsWithFilter: String?
     private let router: ListRoutable
 
-    @Inject var getMarvelEntities: GetMarvelEntityUseCase
+    @Inject var getMarvelEntities: GetSearchUseCase
 
 
     init(
@@ -85,7 +85,7 @@ class ListPresenter {
         loadData()
     }
 
-    func didSelectItem(id: String) {
-        router.openDetail(id: id)
+    func didSelectItem(itemId: ItemId) {
+        router.openDetail(itemId: itemId)
     }
 }
