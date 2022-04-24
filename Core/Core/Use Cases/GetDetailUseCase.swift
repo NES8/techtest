@@ -3,7 +3,7 @@ import Combine
 
 // sourcery: AutoMockable
 public protocol GetDetailUseCase {
-    func callAsFunction(id: String, type: Marvel.Source) -> AnyPublisher<Marvel.MarvelEntity?, Error>
+    func callAsFunction(itemId: ItemId) -> AnyPublisher<Marvel.MarvelEntity?, Error>
 }
 
 public class GetDetail: GetDetailUseCase {
@@ -11,20 +11,20 @@ public class GetDetail: GetDetailUseCase {
 
     public init() {}
 
-    public func callAsFunction(id: String, type: Marvel.Source) -> AnyPublisher<Marvel.MarvelEntity?, Error> {
-        switch type {
+    public func callAsFunction(itemId: ItemId) -> AnyPublisher<Marvel.MarvelEntity?, Error> {
+        switch itemId.source {
         case .characters:
-            return apiClient.getCharacter(id: id)
+            return apiClient.getCharacter(id: itemId.id)
         case .comics:
-            return apiClient.getComic(id: id)
+            return apiClient.getComic(id: itemId.id)
         case .creators:
-            return apiClient.getCreator(id: id)
+            return apiClient.getCreator(id: itemId.id)
         case .events:
-            return apiClient.getEvent(id: id)
+            return apiClient.getEvent(id: itemId.id)
         case .series:
-            return apiClient.getSerie(id: id)
+            return apiClient.getSerie(id: itemId.id)
         case .stories:
-            return apiClient.getStory(id: id)
+            return apiClient.getStory(id: itemId.id)
         }
     }
 }
