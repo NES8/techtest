@@ -8,13 +8,13 @@ import TestFoundation
 
 class GetMarvelEntityTests: XCTestCase {
 
-    var mockApiClient: APIClientMock!
+    var mockApiClient: SearchAPIClientMock!
     var getMarvelEntity: GetSearchUseCase!
     let anyMarvelEntity = Marvel.MarvelEntity(id: 1, name: "name", description: "description", source: .characters, thumbnailURL: nil)
 
     override func setUp() {
         super.setUp()
-        mockApiClient = APIClientMock()
+        mockApiClient = SearchAPIClientMock()
 
         CoreServiceLocator.shared.add {
             Register(SearchAPIClient.self) { self.mockApiClient }

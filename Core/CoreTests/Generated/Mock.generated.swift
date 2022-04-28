@@ -430,42 +430,41 @@ open class GetDetailUseCaseMock: GetDetailUseCase, Mock {
 
 
 
-    open func callAsFunction(id: String, type: Marvel.Source) -> AnyPublisher<Marvel.MarvelEntity?, Error> {
-        addInvocation(.m_callAsFunction__id_idtype_type(Parameter<String>.value(`id`), Parameter<Marvel.Source>.value(`type`)))
-		let perform = methodPerformValue(.m_callAsFunction__id_idtype_type(Parameter<String>.value(`id`), Parameter<Marvel.Source>.value(`type`))) as? (String, Marvel.Source) -> Void
-		perform?(`id`, `type`)
+    open func callAsFunction(itemId: ItemId) -> AnyPublisher<Marvel.MarvelEntity?, Error> {
+        addInvocation(.m_callAsFunction__itemId_itemId(Parameter<ItemId>.value(`itemId`)))
+		let perform = methodPerformValue(.m_callAsFunction__itemId_itemId(Parameter<ItemId>.value(`itemId`))) as? (ItemId) -> Void
+		perform?(`itemId`)
 		var __value: AnyPublisher<Marvel.MarvelEntity?, Error>
 		do {
-		    __value = try methodReturnValue(.m_callAsFunction__id_idtype_type(Parameter<String>.value(`id`), Parameter<Marvel.Source>.value(`type`))).casted()
+		    __value = try methodReturnValue(.m_callAsFunction__itemId_itemId(Parameter<ItemId>.value(`itemId`))).casted()
 		} catch {
-			onFatalFailure("Stub return value not specified for callAsFunction(id: String, type: Marvel.Source). Use given")
-			Failure("Stub return value not specified for callAsFunction(id: String, type: Marvel.Source). Use given")
+			onFatalFailure("Stub return value not specified for callAsFunction(itemId: ItemId). Use given")
+			Failure("Stub return value not specified for callAsFunction(itemId: ItemId). Use given")
 		}
 		return __value
     }
 
 
     fileprivate enum MethodType {
-        case m_callAsFunction__id_idtype_type(Parameter<String>, Parameter<Marvel.Source>)
+        case m_callAsFunction__itemId_itemId(Parameter<ItemId>)
 
         static func compareParameters(lhs: MethodType, rhs: MethodType, matcher: Matcher) -> Matcher.ComparisonResult {
             switch (lhs, rhs) {
-            case (.m_callAsFunction__id_idtype_type(let lhsId, let lhsType), .m_callAsFunction__id_idtype_type(let rhsId, let rhsType)):
+            case (.m_callAsFunction__itemId_itemId(let lhsItemid), .m_callAsFunction__itemId_itemId(let rhsItemid)):
 				var results: [Matcher.ParameterComparisonResult] = []
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsId, rhs: rhsId, with: matcher), lhsId, rhsId, "id"))
-				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsType, rhs: rhsType, with: matcher), lhsType, rhsType, "type"))
+				results.append(Matcher.ParameterComparisonResult(Parameter.compare(lhs: lhsItemid, rhs: rhsItemid, with: matcher), lhsItemid, rhsItemid, "itemId"))
 				return Matcher.ComparisonResult(results)
             }
         }
 
         func intValue() -> Int {
             switch self {
-            case let .m_callAsFunction__id_idtype_type(p0, p1): return p0.intValue + p1.intValue
+            case let .m_callAsFunction__itemId_itemId(p0): return p0.intValue
             }
         }
         func assertionName() -> String {
             switch self {
-            case .m_callAsFunction__id_idtype_type: return ".callAsFunction(id:type:)"
+            case .m_callAsFunction__itemId_itemId: return ".callAsFunction(itemId:)"
             }
         }
     }
@@ -479,12 +478,12 @@ open class GetDetailUseCaseMock: GetDetailUseCase, Mock {
         }
 
 
-        public static func callAsFunction(id: Parameter<String>, type: Parameter<Marvel.Source>, willReturn: AnyPublisher<Marvel.MarvelEntity?, Error>...) -> MethodStub {
-            return Given(method: .m_callAsFunction__id_idtype_type(`id`, `type`), products: willReturn.map({ StubProduct.return($0 as Any) }))
+        public static func callAsFunction(itemId: Parameter<ItemId>, willReturn: AnyPublisher<Marvel.MarvelEntity?, Error>...) -> MethodStub {
+            return Given(method: .m_callAsFunction__itemId_itemId(`itemId`), products: willReturn.map({ StubProduct.return($0 as Any) }))
         }
-        public static func callAsFunction(id: Parameter<String>, type: Parameter<Marvel.Source>, willProduce: (Stubber<AnyPublisher<Marvel.MarvelEntity?, Error>>) -> Void) -> MethodStub {
+        public static func callAsFunction(itemId: Parameter<ItemId>, willProduce: (Stubber<AnyPublisher<Marvel.MarvelEntity?, Error>>) -> Void) -> MethodStub {
             let willReturn: [AnyPublisher<Marvel.MarvelEntity?, Error>] = []
-			let given: Given = { return Given(method: .m_callAsFunction__id_idtype_type(`id`, `type`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
+			let given: Given = { return Given(method: .m_callAsFunction__itemId_itemId(`itemId`), products: willReturn.map({ StubProduct.return($0 as Any) })) }()
 			let stubber = given.stub(for: (AnyPublisher<Marvel.MarvelEntity?, Error>).self)
 			willProduce(stubber)
 			return given
@@ -494,15 +493,15 @@ open class GetDetailUseCaseMock: GetDetailUseCase, Mock {
     public struct Verify {
         fileprivate var method: MethodType
 
-        public static func callAsFunction(id: Parameter<String>, type: Parameter<Marvel.Source>) -> Verify { return Verify(method: .m_callAsFunction__id_idtype_type(`id`, `type`))}
+        public static func callAsFunction(itemId: Parameter<ItemId>) -> Verify { return Verify(method: .m_callAsFunction__itemId_itemId(`itemId`))}
     }
 
     public struct Perform {
         fileprivate var method: MethodType
         var performs: Any
 
-        public static func callAsFunction(id: Parameter<String>, type: Parameter<Marvel.Source>, perform: @escaping (String, Marvel.Source) -> Void) -> Perform {
-            return Perform(method: .m_callAsFunction__id_idtype_type(`id`, `type`), performs: perform)
+        public static func callAsFunction(itemId: Parameter<ItemId>, perform: @escaping (ItemId) -> Void) -> Perform {
+            return Perform(method: .m_callAsFunction__itemId_itemId(`itemId`), performs: perform)
         }
     }
 

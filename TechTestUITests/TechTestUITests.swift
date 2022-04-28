@@ -34,7 +34,6 @@ class TechTestUITests: BaseUITests {
 
         let optionButton = actionSheetFilterButtons["Comics"]
         optionButton.tap()
-        optionButton.tap()
 
         let cell = app.staticTexts[Texts.comicsTitle]
         XCTAssertTrue(waitForElement(cell))
@@ -47,7 +46,6 @@ class TechTestUITests: BaseUITests {
         openSearchFilter()
 
         let optionButton = actionSheetFilterButtons["Creators"]
-        optionButton.tap()
         optionButton.tap()
 
         let cell = app.staticTexts[Texts.creatorsTitle]
@@ -62,7 +60,6 @@ class TechTestUITests: BaseUITests {
 
         let optionButton = actionSheetFilterButtons["Events"]
         optionButton.tap()
-        optionButton.tap()
 
         let cell = app.staticTexts[Texts.eventsTitle]
         XCTAssertTrue(waitForElement(cell))
@@ -75,7 +72,6 @@ class TechTestUITests: BaseUITests {
         openSearchFilter()
 
         let optionButton = actionSheetFilterButtons["Series"]
-        optionButton.tap()
         optionButton.tap()
 
         let cell = app.staticTexts[Texts.seriesTitle]
