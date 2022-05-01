@@ -1,4 +1,5 @@
 import UIKit
+import SDWebImage
 
 protocol DetailUI: BaseUI {
     func show(item: DetailViewModel)
@@ -6,7 +7,9 @@ protocol DetailUI: BaseUI {
 
 class DetailViewController: BaseViewController {
 
+    @IBOutlet private var pictureImageView: UIImageView!
     @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var descriptionTextView: UITextView!
 
     var presenter: DetailPresenter!
     override var lifecyclePresenter: PresenterInterface? {
@@ -16,8 +19,15 @@ class DetailViewController: BaseViewController {
 
 extension DetailViewController: DetailUI {
     func show(item: DetailViewModel) {
+        
         nameLabel.text = item.name
-
-        hideAllViews()
+        descriptionTextView.text = item.description
+        
+        pictureImageView.sd_setImage(
+            with: item.imageUrl,
+            placeholderImage: Asset.noPicture.image
+        )
+        
+        hideAllSubviews()
     }
 }
