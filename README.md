@@ -18,7 +18,7 @@ Create an iOS application that communicates with the Public Marvel API
 ### Includes
 - ✅ List done in iOS 13 style
 - ⏳ List done in iOS 14 style
-- 🛠 Item detail
+- ✅ Item detail
 - ✅ Unit test
 - ✅ Integration test
 - ⏳ UI test
@@ -46,6 +46,10 @@ Create an iOS application that communicates with the Public Marvel API
 - Class without architecture helpers
 - It works with a weak reference to view protocol
 - Dependence injection: Uses @Inject property wrapper that isn't build safe, so we need test all!
+
+### Detail view
+- Simple UI design using Size Classes
+- Helped by super classes that manage interaction between view and presenter. For example, presenter can show a loading view or an error message, without extra implementation in DetailViewController.
 
 ### Use Case
 - Uses Combine framework
