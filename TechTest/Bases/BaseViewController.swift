@@ -63,11 +63,11 @@ class BaseViewController: UIViewController, BaseUI {
     // MARK: BaseUI
 
     func showInitialLoading() {
-        hideAllViews(except: loadingView)
+        hideAllSubviews(except: loadingView)
     }
 
     func showErrorConnection() {
-        hideAllViews(except: errorConnectionView)
+        hideAllSubviews(except: errorConnectionView)
     }
 
     func showMessageView(type: MessageViewType) {
@@ -81,10 +81,10 @@ class BaseViewController: UIViewController, BaseUI {
             frame: self.view.bounds
         )
         self.view.addSubview(self.messageView!)
-        hideAllViews(except: self.messageView)
+        hideAllSubviews(except: self.messageView)
     }
 
-    func hideAllViews(except showView: UIView? = nil) {
+    func hideAllSubviews(except showView: UIView? = nil) {
         errorConnectionView.isHidden = showView != errorConnectionView
         loadingView.isHidden = showView != loadingView
         if let messageView = messageView {

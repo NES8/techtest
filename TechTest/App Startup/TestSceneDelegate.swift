@@ -9,7 +9,8 @@ class TestSceneDelegate: UIResponder, UIWindowSceneDelegate, WindowProvider {
 
     lazy var services: [ServiceProvider] = [
         AdditionsServices(),
-        DomainService(path: "http://localhost:6789"),
+        DomainService(),
+        DataService(path: "http://localhost:6789"),
         AppServiceProvider(windowProvider: self),
         ListServiceProvider(),
         DetailServiceProvider()

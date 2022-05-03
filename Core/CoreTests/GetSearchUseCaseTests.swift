@@ -6,7 +6,7 @@ import TestFoundation
 
 @testable import TechTest
 
-class GetMarvelEntityTests: XCTestCase {
+class GetSearchUseCaseTests: XCTestCase {
 
     var mockApiClient: SearchAPIClientMock!
     var getMarvelEntity: GetSearchUseCase!

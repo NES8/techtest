@@ -18,7 +18,7 @@ Create an iOS application that communicates with the Public Marvel API
 ### Includes
 - ✅ List done in iOS 13 style
 - ⏳ List done in iOS 14 style
-- 🛠 Item detail
+- ✅ Item detail
 - ✅ Unit test
 - ✅ Integration test
 - ⏳ UI test
@@ -28,6 +28,10 @@ Create an iOS application that communicates with the Public Marvel API
 - ⏳ Animations
 - ⏳ Custom ViewController transitions
 - ✅ Documentation
+
+### Run
+- Before run project, please install pods using [Cocoapods](https://cocoapods.org/)
+- If Xcode can't found a framework, please build (⌘B) it selecting the scheme
 
 # The project
 
@@ -39,7 +43,7 @@ Create an iOS application that communicates with the Public Marvel API
 
 - List is a UICollectionViewController without architecture helpers
 - Uses UICollectionViewDiffableDataSource available from iOS 13
-- Universal: Like a TableView on small devices and CollectionView on big screens
+- Universal: Similar to TableView on small devices and CollectionView on big screens
 
 ### List presenter
 
@@ -47,10 +51,14 @@ Create an iOS application that communicates with the Public Marvel API
 - It works with a weak reference to view protocol
 - Dependence injection: Uses @Inject property wrapper that isn't build safe, so we need test all!
 
+### Detail view
+- Simple UI design using Size Classes
+- Helped by super classes that manage interaction between view and presenter. For example, presenter can show a loading view or an error message, without extra implementation in DetailViewController.
+
 ### Use Case
 - Uses Combine framework
-- It receives a search query from presenter and manage API calls
-- API is injected using @Inject too
+- Receives a search query from presenter and manage API calls
+- API is also injected using @Inject
  
 ### Mappers
 There is different type of mappers
@@ -66,17 +74,18 @@ There is different type of mappers
 ## Modularization
 
 - TechTest: Main framework with views and presenters
-- Core: Framework with business rules
+- Core: Framework with business rules and data API
 - TestFoundation: Helpers for tests
 - Pods: Cocoapods framework
 
 ## Tests
 
-There are tests on TechTest and Core frameworks. You can run all using ⌘U from main project
+- There are tests on TechTest and Core frameworks. You can run all using ⌘U from the main project
+- Tests use XCTestCase.
+- Integration test for list and detail, mocking API.
+- Unit test for use cases.
 
 ## Pods
-
-- Before run project, install pods using [Cocoapods](https://cocoapods.org/))
 
 ### View
 - [SDWebImage](https://github.com/SDWebImage/SDWebImage): Used to load images from URLs
@@ -87,5 +96,5 @@ There are tests on TechTest and Core frameworks. You can run all using ⌘U from
 
 ### Tests
 - [Nimble](https://github.com/Quick/Nimble): Used to improve tests readability
-- [Shock](https://github.com/justeat/Shock): Used to mock network request
+- [Shock](https://github.com/justeat/Shock): Used to mock the network request
 - [SwiftyMocky](https://github.com/MakeAWishFoundation/SwiftyMocky): Used to create mocks from protocols

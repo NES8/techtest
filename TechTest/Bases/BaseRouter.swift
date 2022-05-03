@@ -3,7 +3,6 @@ import Core
 
 public typealias DismissCompletion = () -> Void
 
-// sourcery: AutoMockable
 public protocol Routing {
     func close()
     func pop()

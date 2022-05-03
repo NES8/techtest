@@ -20,8 +20,9 @@
 		25488941281467E30010026C /* DetailAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25488940281467E30010026C /* DetailAPIClient.swift */; };
 		2548894328152FCB0010026C /* GetDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548894228152FCB0010026C /* GetDetailUseCase.swift */; };
 		2548894828153D3B0010026C /* ItemId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2548894728153D3B0010026C /* ItemId.swift */; };
+		256438442821BB2400496519 /* DomainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256438432821BB2400496519 /* DomainService.swift */; };
 		25D0DDED2801954A00AC7D67 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D0DDE42801954900AC7D67 /* Core.framework */; };
-		25D0DDF22801954A00AC7D67 /* GetMarvelEntityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0DDF12801954A00AC7D67 /* GetMarvelEntityTests.swift */; };
+		25D0DDF22801954A00AC7D67 /* GetSearchUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0DDF12801954A00AC7D67 /* GetSearchUseCaseTests.swift */; };
 		25D0DDF32801954A00AC7D67 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = 25D0DDE72801954900AC7D67 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		25D0DE0F2801969700AC7D67 /* DomainServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0DDFE2801955300AC7D67 /* DomainServices.swift */; };
 		25D0DE102801969700AC7D67 /* GetSearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D0DDFC2801955300AC7D67 /* GetSearchUseCase.swift */; };
@@ -64,10 +65,11 @@
 		25488940281467E30010026C /* DetailAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAPIClient.swift; sourceTree = "<group>"; };
 		2548894228152FCB0010026C /* GetDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailUseCase.swift; sourceTree = "<group>"; };
 		2548894728153D3B0010026C /* ItemId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemId.swift; sourceTree = "<group>"; };
+		256438432821BB2400496519 /* DomainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainService.swift; sourceTree = "<group>"; };
 		25D0DDE42801954900AC7D67 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25D0DDE72801954900AC7D67 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		25D0DDEC2801954A00AC7D67 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		25D0DDF12801954A00AC7D67 /* GetMarvelEntityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMarvelEntityTests.swift; sourceTree = "<group>"; };
+		25D0DDF12801954A00AC7D67 /* GetSearchUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchUseCaseTests.swift; sourceTree = "<group>"; };
 		25D0DDFC2801955300AC7D67 /* GetSearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchUseCase.swift; sourceTree = "<group>"; };
 		25D0DDFD2801955300AC7D67 /* MarvelEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelEntities.swift; sourceTree = "<group>"; };
 		25D0DDFE2801955300AC7D67 /* DomainServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainServices.swift; sourceTree = "<group>"; };
@@ -130,14 +132,15 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
-		2548894628153C890010026C /* Use Cases */ = {
+		2548894628153C890010026C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				254887A12813F0A20010026C /* SearchQuery.swift */,
 				25D0DDFC2801955300AC7D67 /* GetSearchUseCase.swift */,
 				2548894228152FCB0010026C /* GetDetailUseCase.swift */,
+				256438432821BB2400496519 /* DomainService.swift */,
 			);
-			path = "Use Cases";
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		25D0DDDA2801954900AC7D67 = {
@@ -164,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				2548894728153D3B0010026C /* ItemId.swift */,
-				2548894628153C890010026C /* Use Cases */,
-				25D0DE0A2801955300AC7D67 /* Domain */,
+				2548894628153C890010026C /* Domain */,
+				25D0DE0A2801955300AC7D67 /* Data */,
 				250DDAA028019A1800611B48 /* Additions Pod (no my code) */,
 				25D0DDE72801954900AC7D67 /* Core.h */,
 			);
@@ -176,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				250DDAC82801E29900611B48 /* Generated */,
-				25D0DDF12801954A00AC7D67 /* GetMarvelEntityTests.swift */,
+				25D0DDF12801954A00AC7D67 /* GetSearchUseCaseTests.swift */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -207,14 +210,14 @@
 			path = "API Client";
 			sourceTree = "<group>";
 		};
-		25D0DE0A2801955300AC7D67 /* Domain */ = {
+		25D0DE0A2801955300AC7D67 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				25D0DDFD2801955300AC7D67 /* MarvelEntities.swift */,
 				25D0DDFE2801955300AC7D67 /* DomainServices.swift */,
 				25D0DE092801955300AC7D67 /* API Client */,
 			);
-			path = Domain;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		9E2F7B99ED1086B6F289AA43 /* Frameworks */ = {
@@ -436,6 +439,7 @@
 				2548894828153D3B0010026C /* ItemId.swift in Sources */,
 				25D0DE142801969F00AC7D67 /* MarvelApiDTO+Events.swift in Sources */,
 				250DDA9B28019A1000611B48 /* NoOpAppTask.swift in Sources */,
+				256438442821BB2400496519 /* DomainService.swift in Sources */,
 				25D0DE122801969A00AC7D67 /* SearchAPIClient.swift in Sources */,
 				2548894328152FCB0010026C /* GetDetailUseCase.swift in Sources */,
 			);
@@ -446,7 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250DDACE2801E61E00611B48 /* Mock.generated.swift in Sources */,
-				25D0DDF22801954A00AC7D67 /* GetMarvelEntityTests.swift in Sources */,
+				25D0DDF22801954A00AC7D67 /* GetSearchUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

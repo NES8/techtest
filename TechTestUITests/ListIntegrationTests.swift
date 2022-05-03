@@ -5,7 +5,7 @@ import XCTest
 // NOTE: Test language is forced to English
 // Edit Scheme... -> Test -> Options -> App Language
 
-class TechTestUITests: BaseUITests {
+class ListIntegrationTests: BaseUITests {
 
     private struct Texts {
         static let characterTitle = "Test 3-D Man"
@@ -13,6 +13,14 @@ class TechTestUITests: BaseUITests {
         static let creatorsTitle = "Test #O  "
         static let eventsTitle = "Test Acts of Vengeance!"
         static let seriesTitle = "Test Fantastic Four by Dan Slott Vol. 1 (2021)"
+    }
+    
+    override func setUp() {
+        super.setUp()
+        
+        serviceLocator.addBuildTasks {
+            [DomainService()]
+        }
     }
 
     func testListWithCharacters() throws {
