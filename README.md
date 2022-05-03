@@ -24,7 +24,7 @@ Create an iOS application that communicates with the Public Marvel API
 - ⏳ UI test
 - ⏳ Snapshot test
 - ✅ Universal app
-- ⏳ Use of Size Classes
+- ✅ Use of Size Classes
 - ⏳ Animations
 - ⏳ Custom ViewController transitions
 - ✅ Documentation
