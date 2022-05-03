@@ -25,18 +25,20 @@ class BaseUITests: XCTestCase {
         mockServer.stop()
         super.tearDown()
     }
+    
+    // MARK: - Mock API
 
     func givenListMockedRequest(endpoint: MarvelAPIClient.Endpoint) {
         let route: MockHTTPRoute = .simple(
             method: .get,
             urlPath: endpoint.path,
             code: 200,
-            filename: mockJsonFileName(endpoint)
+            filename: mockListJsonFileName(endpoint)
         )
         mockServer.setup(route: route)
     }
 
-    private func mockJsonFileName(_ endpoint: MarvelAPIClient.Endpoint) -> String {
+    private func mockListJsonFileName(_ endpoint: MarvelAPIClient.Endpoint) -> String {
         switch endpoint {
         case .characters:
             return "getCharacters.json"
@@ -52,6 +54,35 @@ class BaseUITests: XCTestCase {
             return "getStories.json"
         }
     }
+    
+    func givenDetailMockedRequest(endpoint: MarvelAPIClient.Endpoint, id: String) {
+        let path = endpoint.path + "/" + id
+        let route: MockHTTPRoute = .simple(
+            method: .get,
+            urlPath: path,
+            code: 200,
+            filename: mockDetailJsonFileName(endpoint))
+        mockServer.setup(route: route)
+    }
+    
+    private func mockDetailJsonFileName(_ endpoint: MarvelAPIClient.Endpoint) -> String {
+        switch endpoint {
+        case .characters:
+            return "getCharacter.json"
+        case .comics:
+            return "getComic.json"
+        case .creators:
+            return "getCreator.json"
+        case .events:
+            return "getEvent.json"
+        case .series:
+            return "getSerie.json"
+        case .stories:
+            return "getStorie.json"
+        }
+    }
+
+    // MARK: - Helpers
 
     func givenApp() {
         app = XCUIApplication()

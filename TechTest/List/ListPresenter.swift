@@ -9,7 +9,7 @@ class ListPresenter {
     private var startsWithFilter: String?
     private let router: ListRoutable
 
-    @Inject var getMarvelEntities: GetSearchUseCase
+    @Inject var getSearch: GetSearchUseCase
 
 
     init(
@@ -54,15 +54,15 @@ class ListPresenter {
         if let source = ListSectionMapper().map(selectedCategory),
            selectedCategory != .all {
             return [
-                getMarvelEntities(generateSearchQuery(type: source, pageSize: .big))
+                getSearch(generateSearchQuery(type: source, pageSize: .big))
             ]
         } else {
             return [
-                getMarvelEntities(generateSearchQuery(type: .characters, pageSize: .small)),
-                getMarvelEntities(generateSearchQuery(type: .comics, pageSize: .small)),
-                getMarvelEntities(generateSearchQuery(type: .creators, pageSize: .small)),
-                getMarvelEntities(generateSearchQuery(type: .events, pageSize: .small)),
-                getMarvelEntities(generateSearchQuery(type: .series, pageSize: .small)),
+                getSearch(generateSearchQuery(type: .characters, pageSize: .small)),
+                getSearch(generateSearchQuery(type: .comics, pageSize: .small)),
+                getSearch(generateSearchQuery(type: .creators, pageSize: .small)),
+                getSearch(generateSearchQuery(type: .events, pageSize: .small)),
+                getSearch(generateSearchQuery(type: .series, pageSize: .small)),
             ]
         }
     }

@@ -19,6 +19,7 @@ target 'TechTest' do
 
   target 'TechTestUITests' do
     pod 'Shock', '~> 6.1.0'
+    pod 'SwiftyMocky', '~> 4.1.0'
   end
 
 end

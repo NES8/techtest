@@ -8,6 +8,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, WindowProvider {
     lazy var services: [ServiceProvider] = [
         AdditionsServices(),
         DomainService(),
+        DataService(),
         AppServiceProvider(windowProvider: self),
         ListServiceProvider(),
         DetailServiceProvider(),
